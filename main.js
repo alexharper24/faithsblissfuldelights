@@ -1,13 +1,24 @@
 // mobile nav
 const toggle = document.getElementById('navToggle');
 const links = document.getElementById('navLinks');
-if (toggle) {
-  toggle.addEventListener('click', () => {
-    links.classList.toggle('open');
-    toggle.classList.toggle('active');
-  });
+if (toggle && links) {
+  // create dimming overlay behind the drawer
+  const overlay = document.createElement('div');
+  overlay.className = 'nav-overlay';
+  document.body.appendChild(overlay);
+
+  const setMenu = (open) => {
+    links.classList.toggle('open', open);
+    toggle.classList.toggle('active', open);
+    overlay.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  };
+
+  toggle.addEventListener('click', () => setMenu(!links.classList.contains('open')));
+  overlay.addEventListener('click', () => setMenu(false));
   links.querySelectorAll('a').forEach(a =>
-    a.addEventListener('click', () => links.classList.remove('open')));
+    a.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
 }
 
 // year

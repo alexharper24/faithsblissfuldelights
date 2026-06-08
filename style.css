@@ -130,14 +130,30 @@ a{ color:inherit; text-decoration:none; }
 @media(max-width:600px){ .cta-ribbon .wrap{ flex-direction:column; text-align:center; padding:1.5rem; } .cta-ribbon .txt{ flex-direction:column; gap:.4rem; } }
 
 @media(max-width:860px){
+  /* backdrop-filter on a parent traps position:fixed children — remove it on mobile
+     so the drawer & overlay position against the viewport, not the short nav bar */
+  .nav{ backdrop-filter:none; -webkit-backdrop-filter:none; background:var(--ivory); }
   .nav-links{
-    position:fixed; inset:0 0 0 auto; width:min(78%,320px);
-    background:var(--ivory); flex-direction:column; align-items:flex-start;
+    position:fixed; top:0; right:0; bottom:0; height:100vh; height:100dvh;
+    width:min(80%,320px);
+    background:var(--ivory);
+    flex-direction:column; align-items:flex-start; justify-content:flex-start;
     padding:5.5rem 2rem 2rem; gap:1.6rem; transform:translateX(100%);
-    transition:transform .35s ease; box-shadow:var(--shadow); z-index:60;
+    transition:transform .35s ease; box-shadow:-18px 0 50px -20px rgba(74,57,66,.45); z-index:60;
+    overflow-y:auto;
   }
   .nav-links.open{ transform:none; }
-  .nav-links a{ font-size:1rem; }
-  .nav-toggle{ display:block; z-index:70; }
+  .nav-links a{ font-size:1.05rem; width:100%; }
+  .nav-links a::after{ display:none; }
+  .nav-links .nav-cta{ width:100%; justify-content:center; margin-left:0; margin-top:.5rem; }
+  .nav-toggle{ display:block; position:relative; z-index:80; }
+  /* hamburger -> X */
+  .nav-toggle.active span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+  .nav-toggle.active span:nth-child(2){ opacity:0; }
+  .nav-toggle.active span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+  /* dimming overlay behind drawer */
+  .nav-overlay{ position:fixed; inset:0; background:rgba(40,28,34,.5);
+    opacity:0; visibility:hidden; transition:opacity .35s ease, visibility .35s ease; z-index:55; }
+  .nav-overlay.open{ opacity:1; visibility:visible; }
   .footer .wrap{ grid-template-columns:1fr; gap:2rem; }
 }

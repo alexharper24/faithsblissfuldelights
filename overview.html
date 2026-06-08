@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Faith's Blissful Delights — Homemade Cakes, Cookies, Pies &amp; Treats</title>
+<meta name="description" content="Faith's Blissful Delights — homemade, made-to-order cakes, decorated cookies, cupcakes, pies, cheesecakes, fresh breads and sweet treats for every celebration.">
+<link rel="icon" href="img/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ---------- HERO ---------- */
+.hero{ position:relative; z-index:1; padding:3.5rem 0 4.5rem; overflow:hidden; }
+.hero .wrap{ display:grid; grid-template-columns:1.05fr .95fr; gap:3.5rem; align-items:center; }
+.hero-copy .eyebrow{ margin-bottom:1.3rem; }
+.hero-copy h1{ font-size:clamp(2.7rem,6vw,4.6rem); line-height:1.02; margin-bottom:1.4rem; }
+.hero-copy h1 em{ font-style:italic; color:var(--rose-deep); }
+.hero-copy .lead{ font-size:1.18rem; color:var(--ink-soft); max-width:30rem; margin-bottom:2rem; }
+.hero-actions{ display:flex; gap:1rem; flex-wrap:wrap; }
+.hero-meta{ margin-top:2.4rem; display:flex; gap:2.2rem; flex-wrap:wrap; }
+.hero-meta b{ font-family:var(--serif); font-size:1.7rem; color:var(--rose-deep); font-weight:600; display:block; line-height:1; }
+.hero-meta span{ font-size:.76rem; letter-spacing:.18em; text-transform:uppercase; color:var(--ink-soft); }
+.hero-art{ position:relative; height:520px; }
+.hero-art figure{ position:absolute; border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); border:6px solid var(--white); }
+.hero-art img{ width:100%; height:100%; object-fit:cover; }
+.hero-art .a{ width:62%; height:74%; top:0; right:0; z-index:2; }
+.hero-art .b{ width:46%; height:50%; bottom:0; left:0; z-index:3; }
+.hero-art .c{ width:34%; height:40%; top:38%; right:-4%; z-index:4; border-width:5px; }
+.hero-art .blob{ position:absolute; width:140%; height:140%; top:-20%; left:-20%; z-index:0; background:radial-gradient(circle at 60% 40%, var(--rose-soft), transparent 62%); }
+.hero-badge{ position:absolute; bottom:8%; right:2%; z-index:5; width:118px; height:118px; display:grid; place-items:center; text-align:center; border-radius:50%; background:var(--ink); color:var(--rose-mist); font-family:var(--serif); box-shadow:var(--shadow-sm); transform:rotate(-8deg); }
+.hero-badge b{ display:block; font-size:1.5rem; color:#fff; line-height:1; }
+.hero-badge span{ font-family:var(--sans); font-size:.56rem; letter-spacing:.2em; text-transform:uppercase; margin-top:4px; }
+
+/* ---------- categories ---------- */
+.cats{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.6rem; }
+.cat{ position:relative; border-radius:var(--radius); overflow:hidden; aspect-ratio:4/5; box-shadow:var(--shadow-sm); display:block; cursor:pointer; }
+.cat img{ width:100%; height:100%; object-fit:cover; transition:transform .7s cubic-bezier(.2,.7,.2,1); }
+.cat::after{ content:""; position:absolute; inset:0; background:linear-gradient(to top, rgba(74,57,66,.78) 0%, rgba(74,57,66,.12) 48%, transparent 70%); }
+.cat-label{ position:absolute; left:0; right:0; bottom:0; z-index:2; padding:1.4rem 1.5rem; color:#fff; }
+.cat-label h3{ color:#fff; font-size:1.5rem; margin-bottom:.15rem; }
+.cat-label span{ font-size:.78rem; letter-spacing:.06em; color:var(--rose-soft); }
+.cat:hover img{ transform:scale(1.06); }
+
+/* ---------- about ---------- */
+.about-teaser{ display:grid; grid-template-columns:.8fr 1.2fr; gap:3.5rem; align-items:center; }
+.about-teaser .photo{ border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); border:6px solid var(--white); position:relative; }
+.about-teaser .photo img{ width:100%; aspect-ratio:4/5; object-fit:cover; object-position:center top; }
+.about-teaser .photo .tag{ position:absolute; bottom:1rem; left:1rem; background:var(--ink); color:#fff; font-family:var(--serif); font-style:italic; padding:.5rem 1.1rem; border-radius:999px; font-size:.95rem; box-shadow:var(--shadow-sm); }
+.about-teaser blockquote{ font-family:var(--serif); font-size:clamp(1.5rem,3vw,2.1rem); font-style:italic; line-height:1.34; color:var(--ink); margin:1.2rem 0 1.6rem; }
+.values{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; margin-top:1.4rem; }
+.value{ background:var(--white); border:1px solid var(--rose-soft); border-radius:14px; padding:1.3rem; box-shadow:var(--shadow-sm); }
+.value .ic{ font-size:1.4rem; margin-bottom:.4rem; }
+.value h4{ font-size:1.05rem; margin-bottom:.25rem; }
+.value p{ color:var(--ink-soft); font-size:.86rem; }
+
+/* ---------- gallery ---------- */
+.filters{ display:flex; flex-wrap:wrap; gap:.6rem; justify-content:center; margin-bottom:2rem; }
+.filters button{ font-family:var(--sans); font-size:.8rem; letter-spacing:.1em; text-transform:uppercase; font-weight:500; padding:.6rem 1.25rem; border-radius:999px; border:1.5px solid var(--rose-soft); background:var(--white); color:var(--ink-soft); cursor:pointer; transition:.25s; }
+.filters button:hover{ border-color:var(--rose); color:var(--ink); }
+.filters button.active{ background:var(--rose); border-color:var(--rose); color:#fff; }
+.menu-note{ text-align:center; max-width:46rem; margin:0 auto 2.5rem; color:var(--ink-soft); font-size:.96rem; background:var(--rose-mist); border:1px solid var(--rose-soft); border-radius:14px; padding:1rem 1.4rem; }
+.gallery{ columns:4; column-gap:1.2rem; }
+.g-item{ break-inside:avoid; margin-bottom:1.2rem; position:relative; border-radius:14px; overflow:hidden; box-shadow:var(--shadow-sm); cursor:zoom-in; background:var(--cream); }
+.g-item img{ width:100%; display:block; transition:transform .6s cubic-bezier(.2,.7,.2,1); }
+.g-item::after{ content:""; position:absolute; inset:0; background:linear-gradient(to top, rgba(74,57,66,.55), transparent 45%); opacity:0; transition:opacity .35s; }
+.g-cap{ position:absolute; left:0; right:0; bottom:0; padding:1rem; z-index:2; color:#fff; transform:translateY(8px); opacity:0; transition:.35s; }
+.g-cap b{ font-family:var(--serif); font-size:1.05rem; font-weight:500; display:block; }
+.g-cap span{ font-size:.74rem; letter-spacing:.08em; text-transform:uppercase; color:var(--rose-soft); }
+.g-item:hover img{ transform:scale(1.05); }
+.g-item:hover::after{ opacity:1; }
+.g-item:hover .g-cap{ opacity:1; transform:none; }
+.lightbox{ position:fixed; inset:0; z-index:200; background:rgba(40,28,34,.92); display:none; align-items:center; justify-content:center; padding:4vw; cursor:zoom-out; flex-direction:column; gap:1rem; }
+.lightbox.open{ display:flex; }
+.lightbox img{ max-width:90vw; max-height:80vh; border-radius:12px; box-shadow:0 30px 80px rgba(0,0,0,.5); border:5px solid #fff; }
+.lb-cap{ color:#fff; font-family:var(--serif); font-size:1.1rem; font-style:italic; }
+.lb-close{ position:absolute; top:24px; right:30px; color:#fff; font-size:2rem; line-height:1; opacity:.8; }
+
+/* ---------- steps ---------- */
+.steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:1.2rem; margin-bottom:2.5rem; }
+.step{ text-align:center; padding:1.6rem 1rem; background:var(--white); border:1px solid var(--rose-soft); border-radius:var(--radius); box-shadow:var(--shadow-sm); }
+.step .n{ width:38px; height:38px; border-radius:50%; background:var(--rose); color:#fff; font-family:var(--serif); font-size:1.1rem; display:grid; place-items:center; margin:0 auto .8rem; }
+.step h3{ font-size:1.1rem; margin-bottom:.3rem; }
+.step p{ font-size:.88rem; color:var(--ink-soft); }
+
+/* ---------- order ---------- */
+.order-grid{ display:grid; grid-template-columns:1.5fr 1fr; gap:2.5rem; align-items:start; }
+.form-card{ background:var(--white); border:1px solid var(--rose-soft); border-radius:var(--radius); padding:2.4rem; box-shadow:var(--shadow-sm); }
+.form-card h3{ font-size:1.7rem; margin-bottom:.4rem; }
+.form-card .sub{ color:var(--ink-soft); margin-bottom:1.8rem; font-size:.96rem; }
+.field{ margin-bottom:1.3rem; }
+.field label{ display:block; font-size:.8rem; letter-spacing:.08em; text-transform:uppercase; font-weight:600; color:var(--ink); margin-bottom:.5rem; }
+.field input, .field select, .field textarea{ width:100%; font-family:var(--sans); font-size:1rem; color:var(--ink); background:var(--ivory); border:1.5px solid var(--rose-soft); border-radius:12px; padding:.85rem 1rem; transition:.2s; }
+.field input:focus, .field select:focus, .field textarea:focus{ outline:none; border-color:var(--rose); background:#fff; box-shadow:0 0 0 4px var(--rose-mist); }
+.field textarea{ resize:vertical; min-height:120px; }
+.field-row{ display:grid; grid-template-columns:1fr 1fr; gap:1.1rem; }
+.submit-row{ margin-top:1.6rem; }
+.submit-row .btn{ width:100%; justify-content:center; }
+.alt-contact{ text-align:center; margin-top:1rem; font-size:.9rem; color:var(--ink-soft); }
+.form-thanks{ text-align:center; padding:1.5rem .5rem; animation:fadeUp .5s ease; }
+.form-thanks .ic{ font-size:2.6rem; margin-bottom:.6rem; }
+.form-thanks p{ color:var(--ink-soft); max-width:24rem; margin:0 auto .6rem; }
+.form-thanks .small{ font-size:.86rem; }
+.form-thanks a{ color:var(--rose-deep); font-weight:600; }
+@keyframes fadeUp{ from{ opacity:0; transform:translateY(10px) } to{ opacity:1; transform:none } }
+.form-error{ background:#fbe6e9; border:1px solid #e9aab4; color:#9a3b4d; border-radius:10px; padding:.8rem 1rem; font-size:.9rem; margin-top:1rem; }
+button.is-sending{ opacity:.7; pointer-events:none; }
+.side-card{ background:var(--ink); color:var(--rose-mist); border-radius:var(--radius); padding:2rem; margin-bottom:1.4rem; }
+.side-card h3{ color:#fff; font-size:1.3rem; margin-bottom:1rem; }
+.side-card .row{ display:flex; gap:.8rem; align-items:flex-start; margin-bottom:1rem; font-size:.95rem; }
+.side-card .row:last-child{ margin-bottom:0; }
+.side-card .row .ic{ font-size:1.1rem; flex:none; width:24px; text-align:center; }
+.side-card a{ color:#fff; border-bottom:1px solid rgba(255,255,255,.3); }
+.side-card a:hover{ color:var(--rose-soft); }
+.side-card .place{ color:var(--champagne); }
+.info-card{ background:var(--rose-mist); border:1px solid var(--rose-soft); border-radius:var(--radius); padding:2rem; }
+.info-card h3{ font-size:1.25rem; margin-bottom:.9rem; }
+.info-card ul{ list-style:none; }
+.info-card li{ font-size:.92rem; color:var(--ink-soft); padding-left:1.5rem; position:relative; margin-bottom:.7rem; line-height:1.5; }
+.info-card li::before{ content:"🧁"; position:absolute; left:0; font-size:.85rem; }
+.info-card .lead-time{ font-family:var(--serif); font-size:1.15rem; color:var(--rose-deep); font-style:italic; margin-top:.4rem; }
+
+@media(max-width:860px){
+  .hero .wrap{ grid-template-columns:1fr; gap:2.5rem; }
+  .hero-art{ height:420px; order:-1; }
+  .cats{ grid-template-columns:1fr 1fr; }
+  .about-teaser{ grid-template-columns:1fr; gap:2rem; }
+  .about-teaser .photo{ max-width:380px; }
+  .values{ grid-template-columns:1fr; }
+  .gallery{ columns:3; }
+  .steps{ grid-template-columns:1fr 1fr; }
+  .order-grid{ grid-template-columns:1fr; }
+  .form-card{ padding:1.8rem 1.4rem; }
+}
+@media(max-width:720px){ .gallery{ columns:2; column-gap:.8rem; } .g-item{ margin-bottom:.8rem; } }
+@media(max-width:520px){ .cats{ grid-template-columns:1fr; } }
+@media(max-width:480px){ .field-row{ grid-template-columns:1fr; } .gallery{ columns:1; } }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <img class="mark" src="img/logo.svg" alt="">
+      <span class="name">Faith's Blissful Delights<span>Homemade with love</span></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#top">Home</a>
+      <a href="#menu">Menu &amp; Gallery</a>
+      <a href="#about">About</a>
+      <a href="#order">Order</a>
+      <a href="#order" class="btn btn-primary nav-cta">Order Now</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<a id="top"></a>
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy reveal">
+      <span class="eyebrow">Homemade Bakery &middot; Made to Order</span>
+      <h1>Every occasion deserves something <em>blissful</em>.</h1>
+      <p class="lead">From custom celebration cakes to trays of hand-decorated cookies, fresh pies, and warm bread — baked from scratch and made just for you.</p>
+      <div class="hero-actions">
+        <a href="#order" class="btn btn-primary">Request an Order</a>
+        <a href="#menu" class="btn btn-ghost">Browse the Menu</a>
+      </div>
+      <div class="hero-meta">
+        <div><b>100%</b><span>From Scratch</span></div>
+        <div><b>Custom</b><span>Made to Order</span></div>
+        <div><b>Local</b><span>Pickup Available</span></div>
+      </div>
+    </div>
+    <div class="hero-art reveal">
+      <div class="blob"></div>
+      <figure class="a"><img src="img/cake-wedding-rustic.jpg" alt="Rustic floral tiered wedding cake"></figure>
+      <figure class="b"><img src="img/cookies-heart-pink.jpg" alt="Pink decorated heart cookies"></figure>
+      <figure class="c"><img src="img/pie-strawberry-pink.jpg" alt="Fresh strawberry pie"></figure>
+      <div class="hero-badge"><div><b>Fresh</b><span>Baked Daily</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="section section-cream">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">What We Bake</span>
+      <h2>A little something for everyone</h2>
+      <p>Browse a few favorites — the full gallery is just below.</p>
+    </div>
+    <div class="cats">
+      <a class="cat reveal" href="#menu" data-jump="cakes"><img src="img/cake-pink-rose.jpg" alt="Custom cakes"><div class="cat-label"><h3>Custom Cakes</h3><span>Birthdays, weddings &amp; themes</span></div></a>
+      <a class="cat reveal" href="#menu" data-jump="cookies"><img src="img/cookies-easter-mm.jpg" alt="Decorated cookies"><div class="cat-label"><h3>Cookies</h3><span>Seasonal &amp; hand-decorated</span></div></a>
+      <a class="cat reveal" href="#menu" data-jump="cupcakes"><img src="img/cupcakes-pink-teal.jpg" alt="Cupcakes"><div class="cat-label"><h3>Cupcakes</h3><span>By the dozen or display</span></div></a>
+      <a class="cat reveal" href="#menu" data-jump="pies"><img src="img/pie-cherry-lattice.jpg" alt="Pies and cheesecakes"><div class="cat-label"><h3>Pies &amp; Cheesecakes</h3><span>Fruit, lattice &amp; swirl</span></div></a>
+      <a class="cat reveal" href="#menu" data-jump="breads"><img src="img/bread-loaves-4.jpg" alt="Fresh breads"><div class="cat-label"><h3>Fresh Breads</h3><span>Baked golden &amp; warm</span></div></a>
+      <a class="cat reveal" href="#menu" data-jump="treats"><img src="img/treats-choc-strawberries.jpg" alt="Sweet treats"><div class="cat-label"><h3>Treats &amp; Candies</h3><span>Buckeyes, dipped berries &amp; more</span></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<a id="about"></a>
+<section class="section">
+  <div class="wrap about-teaser">
+    <div class="photo reveal">
+      <img src="img/baker-faith.jpg" alt="Faith, the baker behind Faith's Blissful Delights">
+      <span class="tag">Hi, I'm Faith</span>
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">Meet the Baker</span>
+      <blockquote>"The best treats are made by hand, from scratch, and shared with the people you love."</blockquote>
+      <p>Faith's Blissful Delights began in a home kitchen with a love of baking and a wish to make people's celebrations a little sweeter. What started as treats for family and friends grew into custom orders for birthdays, weddings, holidays, and every reason to celebrate in between — each one still made by hand, to order, with the same care that started it all.</p>
+      <div class="values">
+        <div class="value"><div class="ic">🥣</div><h4>From Scratch</h4><p>Real ingredients, mixed &amp; baked by hand.</p></div>
+        <div class="value"><div class="ic">🎨</div><h4>Made for You</h4><p>Your colors, theme &amp; favorite flavors.</p></div>
+        <div class="value"><div class="ic">💕</div><h4>With Care</h4><p>Baked for your family like our own.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU & GALLERY -->
+<a id="menu"></a>
+<section class="section section-cream">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Menu &amp; Gallery</span>
+      <h2>A gallery of blissful bakes</h2>
+      <p>Everything here was made to order — use it for inspiration. Almost anything can be customized for your flavors, colors, and occasion.</p>
+    </div>
+
+    <div class="filters" id="filters">
+      <button data-filter="all" class="active">All</button>
+      <button data-filter="cakes">Cakes</button>
+      <button data-filter="cookies">Cookies</button>
+      <button data-filter="cupcakes">Cupcakes</button>
+      <button data-filter="pies">Pies &amp; Cheesecakes</button>
+      <button data-filter="breads">Breads</button>
+      <button data-filter="treats">Treats</button>
+    </div>
+
+    <p class="menu-note">💕 Pricing varies by size, design &amp; detail. Tell us what you have in mind in the <a href="#order" style="color:var(--rose-deep);font-weight:600">order form</a> below and we'll give you a quote.</p>
+
+    <div class="gallery" id="grid">
+      <!-- CAKES -->
+      <div class="g-item" data-cat="cakes"><img src="img/cake-wedding-rustic.jpg" alt="Rustic floral two-tier wedding cake"><div class="g-cap"><b>Rustic Wedding Cake</b><span>Cakes</span></div></div>
+      <div class="g-item" data-cat="cakes"><img src="img/cake-axolotl.jpg" alt="Axolotl under-the-sea birthday cake"><div class="g-cap"><b>Under-the-Sea Birthday</b><span>Cakes</span></div></div>
+      <div class="g-item" data-cat="cakes"><img src="img/cake-lambeth.jpg" alt="Vintage Lambeth piped cake in pink, blue and yellow"><div class="g-cap"><b>Vintage Lambeth</b><span>Cakes</span></div></div>
+      <div class="g-item" data-cat="cakes"><img src="img/cake-construction.jpg" alt="Construction truck birthday cake"><div class="g-cap"><b>Construction Site</b><span>Cakes</span></div></div>
+      <div class="g-item" data-cat="cakes"><img src="img/cake-pink-rose.jpg" alt="Pink and white buttercream rose cake"><div class="g-cap"><b>Buttercream Roses</b><span>Cakes</span></div></div>
+      <div class="g-item" data-cat="cakes"><img src="img/cake-watermelon.jpg" alt="Watermelon-themed summer cake"><div class="g-cap"><b>Watermelon Cake</b><span>Cakes</span></div></div>
+      <div class="g-item" data-cat="cakes"><img src="img/cake-starwars.jpg" alt="Galaxy birthday cake"><div class="g-cap"><b>Galaxy Theme</b><span>Cakes</span></div></div>
+      <div class="g-item" data-cat="cakes"><img src="img/cake-wedding-white.jpg" alt="Classic white tiered wedding cake"><div class="g-cap"><b>Classic Tiered Wedding</b><span>Cakes</span></div></div>
+      <div class="g-item" data-cat="cakes"><img src="img/cake-miss-to-mrs.jpg" alt="Miss to Mrs bridal shower cake"><div class="g-cap"><b>Bridal Shower</b><span>Cakes</span></div></div>
+      <div class="g-item" data-cat="cakes"><img src="img/cake-mocha-rose.jpg" alt="Mocha buttercream cake with orange roses"><div class="g-cap"><b>Mocha &amp; Roses</b><span>Cakes</span></div></div>
+      <div class="g-item" data-cat="cakes"><img src="img/cake-basketweave.jpg" alt="Basketweave cake with fresh flowers"><div class="g-cap"><b>Basketweave &amp; Florals</b><span>Cakes</span></div></div>
+      <!-- COOKIES -->
+      <div class="g-item" data-cat="cookies"><img src="img/cookies-easter-mm.jpg" alt="Pastel Easter candy cookies"><div class="g-cap"><b>Pastel Spring Cookies</b><span>Cookies</span></div></div>
+      <div class="g-item" data-cat="cookies"><img src="img/cookies-shamrock.jpg" alt="Piped shamrock St. Patrick's cookies"><div class="g-cap"><b>Shamrock Sugar Cookies</b><span>Cookies</span></div></div>
+      <div class="g-item" data-cat="cookies"><img src="img/cookies-heart-pink.jpg" alt="Pink piped heart cookies"><div class="g-cap"><b>Valentine Hearts</b><span>Cookies</span></div></div>
+      <div class="g-item" data-cat="cookies"><img src="img/cookies-christmas-platter.jpg" alt="Christmas cookie assortment platter"><div class="g-cap"><b>Holiday Cookie Tray</b><span>Cookies</span></div></div>
+      <div class="g-item" data-cat="cookies"><img src="img/cookies-patriotic-star.jpg" alt="Red white and blue star cookies"><div class="g-cap"><b>Patriotic Stars</b><span>Cookies</span></div></div>
+      <div class="g-item" data-cat="cookies"><img src="img/cookies-fall-pumpkin.jpg" alt="Fall pumpkin and acorn piped cookies"><div class="g-cap"><b>Autumn Harvest</b><span>Cookies</span></div></div>
+      <div class="g-item" data-cat="cookies"><img src="img/cookies-mickey-2022.jpg" alt="Graduation 2022 themed cookies"><div class="g-cap"><b>Celebration Numbers</b><span>Cookies</span></div></div>
+      <div class="g-item" data-cat="cookies"><img src="img/cookies-platter-mm.jpg" alt="Candy and piped cookie platter"><div class="g-cap"><b>Mixed Cookie Platter</b><span>Cookies</span></div></div>
+      <div class="g-item" data-cat="cookies"><img src="img/cookies-choc-chip.jpg" alt="Classic chocolate chip cookies"><div class="g-cap"><b>Chocolate Chip</b><span>Cookies</span></div></div>
+      <div class="g-item" data-cat="cookies"><img src="img/cookies-double-choc.jpg" alt="Double chocolate cookies with milk"><div class="g-cap"><b>Double Chocolate</b><span>Cookies</span></div></div>
+      <!-- CUPCAKES -->
+      <div class="g-item" data-cat="cupcakes"><img src="img/cupcakes-pink-teal.jpg" alt="Pink and teal swirl cupcakes"><div class="g-cap"><b>Swirl Cupcakes</b><span>Cupcakes</span></div></div>
+      <div class="g-item" data-cat="cupcakes"><img src="img/cupcakes-tower.jpg" alt="Wedding cupcake tower"><div class="g-cap"><b>Cupcake Tower</b><span>Cupcakes</span></div></div>
+      <div class="g-item" data-cat="cupcakes"><img src="img/cupcakes-ring-display.jpg" alt="Engagement ring cupcake display"><div class="g-cap"><b>Ring Display</b><span>Cupcakes</span></div></div>
+      <!-- PIES & CHEESECAKES -->
+      <div class="g-item" data-cat="pies"><img src="img/pie-cherry-lattice.jpg" alt="Cherry lattice pie"><div class="g-cap"><b>Cherry Lattice Pie</b><span>Pies</span></div></div>
+      <div class="g-item" data-cat="pies"><img src="img/pie-strawberry-pink.jpg" alt="Fresh strawberry pie"><div class="g-cap"><b>Fresh Strawberry Pie</b><span>Pies</span></div></div>
+      <div class="g-item" data-cat="pies"><img src="img/pie-strawberry-glass.jpg" alt="Glazed strawberry pie"><div class="g-cap"><b>Glazed Strawberry</b><span>Pies</span></div></div>
+      <div class="g-item" data-cat="pies"><img src="img/cheesecake-raspberry.jpg" alt="Raspberry swirl cheesecake"><div class="g-cap"><b>Raspberry Swirl Cheesecake</b><span>Cheesecakes</span></div></div>
+      <div class="g-item" data-cat="pies"><img src="img/cheesecake-wedding.jpg" alt="Wedding cheesecake with roses"><div class="g-cap"><b>Cheesecake Centerpiece</b><span>Cheesecakes</span></div></div>
+      <div class="g-item" data-cat="pies"><img src="img/tart-fruit-flag.jpg" alt="Fresh fruit flag tart"><div class="g-cap"><b>Fresh Fruit Tart</b><span>Pies</span></div></div>
+      <!-- BREADS -->
+      <div class="g-item" data-cat="breads"><img src="img/bread-loaves-4.jpg" alt="Four golden bread loaves"><div class="g-cap"><b>Homemade Bread</b><span>Breads</span></div></div>
+      <div class="g-item" data-cat="breads"><img src="img/bread-loaves-2.jpg" alt="Two fresh baked bread loaves"><div class="g-cap"><b>Fresh Loaves</b><span>Breads</span></div></div>
+      <!-- TREATS -->
+      <div class="g-item" data-cat="treats"><img src="img/treats-choc-strawberries.jpg" alt="Chocolate covered strawberries"><div class="g-cap"><b>Chocolate-Dipped Berries</b><span>Treats</span></div></div>
+      <div class="g-item" data-cat="treats"><img src="img/treats-buckeyes.jpg" alt="Peanut butter buckeye candies"><div class="g-cap"><b>Buckeyes</b><span>Treats</span></div></div>
+      <div class="g-item" data-cat="treats"><img src="img/treats-cowboy-hats.jpg" alt="Chocolate cowboy hat candies"><div class="g-cap"><b>Chocolate Cowboy Hats</b><span>Treats</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER -->
+<a id="order"></a>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Place an Order</span>
+      <h2>Let's make something blissful</h2>
+      <p>Fill out the form with as much detail as you can — we'll reply with availability and a quote.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step reveal"><div class="n">1</div><h3>Tell Us</h3><p>Share your occasion, date &amp; ideas</p></div>
+      <div class="step reveal"><div class="n">2</div><h3>We Reply</h3><p>We confirm details &amp; send a quote</p></div>
+      <div class="step reveal"><div class="n">3</div><h3>We Bake</h3><p>Made fresh, just for you</p></div>
+      <div class="step reveal"><div class="n">4</div><h3>Pick Up</h3><p>Grab your treats &amp; celebrate!</p></div>
+    </div>
+
+    <div class="order-grid">
+      <div class="form-card reveal">
+        <h3>Custom Order Request</h3>
+        <p class="sub">No payment now — this just starts the conversation. Required fields are marked with *.</p>
+        <!-- Formspree: replace YOUR_FORM_ID with the ID from your Formspree dashboard -->
+        <form id="orderForm" action="https://formspree.io/f/xjgdwvov" method="POST">
+          <input type="hidden" name="_subject" value="New Custom Order Request — Faith's Blissful Delights">
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+          <div class="field-row">
+            <div class="field"><label for="name">Your Name *</label><input type="text" id="name" name="name" required placeholder="First &amp; last name"></div>
+            <div class="field"><label for="phone">Phone *</label><input type="tel" id="phone" name="phone" required placeholder="(574) 000-0000"></div>
+          </div>
+          <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="you@example.com"></div>
+          <div class="field-row">
+            <div class="field"><label for="item">What would you like? *</label>
+              <select id="item" name="item" required>
+                <option value="" disabled selected>Choose a category</option>
+                <option>Custom Cake</option><option>Cupcakes</option><option>Decorated Cookies</option>
+                <option>Pie</option><option>Cheesecake</option><option>Bread</option>
+                <option>Treats / Candies</option><option>Mixed / Not sure yet</option>
+              </select>
+            </div>
+            <div class="field"><label for="date">Date Needed *</label><input type="date" id="date" name="date" required></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="servings">Servings / Quantity</label><input type="text" id="servings" name="servings" placeholder="e.g. 24 cookies, cake for 20"></div>
+            <div class="field"><label for="occasion">Occasion</label><input type="text" id="occasion" name="occasion" placeholder="Birthday, wedding, holiday…"></div>
+          </div>
+          <div class="field"><label for="details">Tell us about your idea *</label><textarea id="details" name="details" required placeholder="Colors, theme, flavors, gallery favorites, allergies, etc. The more detail the better!"></textarea></div>
+          <div class="submit-row"><button type="submit" class="btn btn-primary">Send My Request</button></div>
+          <p class="alt-contact">Prefer to talk? Call or text <a href="tel:5742532807" style="color:var(--rose-deep);font-weight:600">(574) 253-2807</a></p>
+        </form>
+        <div class="form-thanks" id="formThanks" hidden>
+          <div class="ic">🧁</div>
+          <h3 style="font-size:1.8rem;margin-bottom:.6rem;color:var(--rose-deep)">Thank you!</h3>
+          <p>Your request is on its way to Faith. We'll be in touch soon with availability and a quote. Can't wait to bake for you!</p>
+          <p class="small">Need it sooner? Call or text <a href="tel:5742532807">(574) 253-2807</a>.</p>
+        </div>
+      </div>
+      <aside>
+        <div class="side-card reveal">
+          <h3>Get in Touch</h3>
+          <div class="row"><span class="ic">📞</span><div>Call or text<br><a href="tel:5742532807">(574) 253-2807</a></div></div>
+          <div class="row"><span class="ic">✉️</span><div>Email<br><a href="mailto:violinteacher1@gmail.com">violinteacher1@gmail.com</a></div></div>
+          <div class="row"><span class="ic">📍</span><div>Pickup<br><span class="place">[Pickup location / Service area]</span></div></div>
+          <div class="row"><span class="ic">📘</span><div>Follow along<br><a href="https://www.facebook.com/p/Faiths-Blissful-Delights-100063565023319/" target="_blank" rel="noopener">Facebook</a></div></div>
+        </div>
+        <div class="info-card reveal">
+          <h3>Good to Know</h3>
+          <ul>
+            <li>Everything is made fresh to order — no two are exactly alike.</li>
+            <li>Custom cakes &amp; large cookie trays need the most notice.</li>
+            <li>We'll always confirm pricing &amp; pickup before you're locked in.</li>
+            <li>Have a Pinterest pic or gallery favorite? Send it along!</li>
+          </ul>
+          <p style="font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--ink);margin-top:1.2rem">Typical Lead Time</p>
+          <p class="lead-time">[e.g. Please order at least 1 week ahead]</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- lightbox -->
+<div class="lightbox" id="lightbox">
+  <span class="lb-close">&times;</span>
+  <img alt="">
+  <div class="lb-cap"></div>
+</div>
+
+<footer class="footer">
+  <div class="wrap">
+    <div>
+      <div class="name-lg">Faith's Blissful Delights</div>
+      <p>Homemade, made-to-order cakes, cookies, pies &amp; treats for every occasion.</p>
+      <p class="place">Serving [Service Area] &middot; Local pickup</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <p><a href="#top">Home</a></p>
+      <p><a href="#menu">Menu &amp; Gallery</a></p>
+      <p><a href="#about">About</a></p>
+      <p><a href="#order">Order</a></p>
+    </div>
+    <div>
+      <h4>Get in Touch</h4>
+      <p><a href="tel:5742532807">(574) 253-2807</a></p>
+      <p><a href="mailto:violinteacher1@gmail.com">violinteacher1@gmail.com</a></p>
+      <p><a href="https://www.facebook.com/p/Faiths-Blissful-Delights-100063565023319/" target="_blank" rel="noopener">Facebook</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom wrap">© <span id="yr"></span> Faith's Blissful Delights · Baked fresh with love</div>
+</footer>
+
+<script src="main.js"></script>
+<script>
+// category cards jump to gallery and apply the matching filter
+document.querySelectorAll('.cat[data-jump]').forEach(c=>{
+  c.addEventListener('click', e=>{
+    const f = c.dataset.jump;
+    const btn = document.querySelector(`.filters [data-filter="${f}"]`);
+    if (btn) setTimeout(()=>btn.click(), 500);
+  });
+});
+// order form -> Formspree (AJAX) with on-page thank-you message.
+// SETUP: in the <form> tag above, replace YOUR_FORM_ID in the action URL
+// with the form ID from your Formspree dashboard.
+(function(){
+  const form = document.getElementById('orderForm');
+  const thanks = document.getElementById('formThanks');
+  if (!form) return;
+  const btn = form.querySelector('button[type="submit"]');
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    const prevErr = form.querySelector('.form-error');
+    if (prevErr) prevErr.remove();
+    if (form.action.includes('YOUR_FORM_ID')) {
+      showError("This form isn't connected yet. Add your Formspree form ID to the form's action, or call/text us at (574) 253-2807.");
+      return;
+    }
+    const original = btn.textContent;
+    btn.classList.add('is-sending');
+    btn.textContent = 'Sending…';
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.hidden = true;
+        thanks.hidden = false;
+        thanks.scrollIntoView({ behavior:'smooth', block:'center' });
+        form.reset();
+      } else {
+        const data = await res.json().catch(()=>({}));
+        const msg = (data.errors && data.errors.map(x=>x.message).join(', '))
+                    || "Something went wrong sending your request.";
+        showError(msg + " Please try again, or call/text (574) 253-2807.");
+      }
+    } catch (err) {
+      showError("Couldn't reach the server. Please check your connection and try again, or call/text (574) 253-2807.");
+    } finally {
+      btn.classList.remove('is-sending');
+      btn.textContent = original;
+    }
+  });
+  function showError(text){
+    const div = document.createElement('div');
+    div.className = 'form-error';
+    div.textContent = text;
+    form.querySelector('.submit-row').after(div);
+  }
+})();
+</script>
+</body>
+</html>
