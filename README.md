@@ -16,15 +16,15 @@ A modern, mobile-friendly static website. No backend needed — perfect for
 Defined as CSS variables at the top of `style.css` — change them in one place
 to re-theme the whole site.
 
-## ⚠️ PLACEHOLDERS TO FILL IN
-Search the files for square brackets `[ ]` and replace:
+## ✅ All details filled in
+- Service area: Bellevue, OH area
+- Pickup: Local pickup in the Bellevue, OH area
+- Lead time: 1 week preferred, rush orders for a fee
+- Dietary: limited gluten-free, dairy-free & sugar-free options noted
+- Phone, email (violinteacher1@gmail.com), Facebook, and the Formspree order form are all set.
 
-1. **Service area** — `[Service Area]` (footers)
-2. **Pickup location** — `[Pickup location / Service area]` (`order.html` sidebar)
-3. **Lead time** — `[e.g. Please order at least 1 week ahead]` (`order.html`)
+No remaining placeholders.
 
-Already filled in: phone (574) 253-2807, email violinteacher1@gmail.com,
-the Facebook page link, and the Formspree order form.
 
 ## Logo
 `img/logo.svg` is a simple placeholder mark (cupcake + cherry in the rose palette).
