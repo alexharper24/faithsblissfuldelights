@@ -10,7 +10,7 @@ A modern, mobile-friendly static website. No backend needed — perfect for
 - `about.html` — About / Meet the Baker (uses the cropped photo of Faith)
 - `order.html` — Custom Order request form + contact info
 - `style.css`, `main.js` — shared styling & scripts
-- `img/` — all optimized photos + the SVG logo placeholder
+-  `img/` — all optimized photos, Faith's logo (logo-faith.png) & favicon.png
 
 ## Colors (dusty rose + ivory + soft charcoal-plum + champagne accent)
 Defined as CSS variables at the top of `style.css` — change them in one place
@@ -27,9 +27,10 @@ No remaining placeholders.
 
 
 ## Logo
-`img/logo.svg` is a simple placeholder mark (cupcake + cherry in the rose palette).
-Swap it for a real logo later — just replace that file (keep the name) or update
-the `<img src="img/logo.svg">` references.
+The site uses Faith's real logo: `img/logo-faith.png` in the header (the teal
+mixer emblem with the photographed paper background removed), and `img/favicon.png`
+(just the mixer) as the browser tab icon. The header tagline reads
+"It's all about the Buttercream!" 
 
 ## How the order form works (Formspree)
 The custom order form submits through **Formspree** (form ID `xjgdwvov`, already

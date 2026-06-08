@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Faith's Blissful Delights | Homemade Cakes, Cookies, Pies &amp; Treats</title>
 <meta name="description" content="Faith's Blissful Delights. Homemade, made-to-order cakes, decorated cookies, cupcakes, pies, cheesecakes, fresh breads, and sweet treats for every celebration.">
-<link rel="icon" href="img/logo.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="stylesheet" href="style.css">
 <style>
 /* ---------- HERO ---------- */
@@ -133,6 +133,14 @@ button.is-sending{ opacity:.7; pointer-events:none; }
 @media(max-width:720px){ .gallery{ columns:2; column-gap:.8rem; } .g-item{ margin-bottom:.8rem; } }
 @media(max-width:520px){ .cats{ grid-template-columns:1fr; } }
 @media(max-width:480px){ .field-row{ grid-template-columns:1fr; } .gallery{ columns:1; } }
+/* Touch devices: disable hover effects to prevent the "tap twice" bug */
+@media (hover: none) {
+  .btn-primary:hover, .btn-ghost:hover, .cta-ribbon .btn:hover,
+  .cat:hover img, .feat figure:hover img, .g-item:hover img { transform: none; }
+  .btn-primary:hover { background: var(--rose); }
+  .btn-ghost:hover { background: transparent; }
+  .cta-ribbon .btn:hover { background:#fff; color:var(--rose-deep); border-color:#fff; }
+}
 </style>
 </head>
 <body>
@@ -140,8 +148,8 @@ button.is-sending{ opacity:.7; pointer-events:none; }
 <header class="nav">
   <div class="wrap">
     <a class="brand" href="#top">
-      <img class="mark" src="img/logo.svg" alt="">
-      <span class="name">Faith's Blissful Delights<span>Homemade with love</span></span>
+      <img class="mark" src="img/logo-faith.png" alt="Faith's Blissful Delights logo">
+      <span class="name">Faith's Blissful Delights<span>It's all about the Buttercream!</span></span>
     </a>
     <nav class="nav-links" id="navLinks">
       <a href="#top">Home</a>
