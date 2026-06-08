@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About — Faith's Blissful Delights</title>
+<meta name="description" content="Meet Faith — the baker behind Faith's Blissful Delights. Homemade, made-to-order baked goods crafted with care for every celebration.">
+<link rel="icon" href="img/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<style>
+.about-hero{ padding:3.5rem 0 1rem; }
+.about-hero .wrap{ display:grid; grid-template-columns:1fr 1fr; gap:3.5rem; align-items:center; }
+.about-hero .photo{ border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); border:7px solid var(--white); position:relative; }
+.about-hero .photo img{ width:100%; aspect-ratio:4/5; object-fit:cover; object-position:center top; }
+.about-hero .photo .tag{ position:absolute; bottom:1rem; left:1rem; background:var(--ink); color:#fff; font-family:var(--serif);
+  font-style:italic; padding:.5rem 1.1rem; border-radius:999px; font-size:.95rem; box-shadow:var(--shadow-sm); }
+.about-hero h1{ font-size:clamp(2.4rem,5.5vw,3.8rem); margin:1rem 0 1.2rem; }
+.about-hero h1 em{ font-style:italic; color:var(--rose-deep); }
+.about-hero p{ color:var(--ink-soft); font-size:1.1rem; margin-bottom:1rem; }
+
+.values{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.6rem; }
+.value{ background:var(--white); border:1px solid var(--rose-soft); border-radius:var(--radius); padding:2rem 1.7rem; box-shadow:var(--shadow-sm); }
+.value .ic{ width:48px; height:48px; border-radius:12px; background:var(--rose-mist); display:grid; place-items:center; margin-bottom:1rem; font-size:1.5rem; }
+.value h3{ font-size:1.3rem; margin-bottom:.5rem; }
+.value p{ color:var(--ink-soft); font-size:.96rem; }
+
+.story-quote{ text-align:center; max-width:48rem; margin:0 auto; }
+.story-quote blockquote{ font-family:var(--serif); font-style:italic; font-size:clamp(1.6rem,3.5vw,2.4rem); line-height:1.35; color:var(--ink); }
+.story-quote .sig{ margin-top:1.4rem; font-family:var(--serif); font-size:1.2rem; color:var(--rose-deep); }
+.story-quote .sig span{ display:block; font-family:var(--sans); font-size:.78rem; letter-spacing:.22em; text-transform:uppercase; color:var(--ink-soft); margin-top:.2rem; }
+
+@media(max-width:860px){
+  .about-hero .wrap{ grid-template-columns:1fr; gap:2.2rem; }
+  .about-hero .photo{ max-width:380px; }
+  .values{ grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img class="mark" src="img/logo.svg" alt="">
+      <span class="name">Faith's Blissful Delights<span>Homemade with love</span></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu &amp; Gallery</a>
+      <a href="about.html" class="active">About</a>
+      <a href="order.html">Order</a>
+      <a href="order.html" class="btn btn-primary nav-cta">Order Now</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="about-hero">
+  <div class="wrap">
+    <div class="photo reveal">
+      <img src="img/baker-faith.jpg" alt="Faith, the baker behind Faith's Blissful Delights">
+      <span class="tag">Hi, I'm Faith 👋</span>
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">Our Story</span>
+      <h1>Baked from scratch, made with <em>love</em>.</h1>
+      <p>Faith's Blissful Delights started the way the best things usually do — in a home kitchen, with a love of baking and a wish to make people's celebrations a little sweeter.</p>
+      <p>What began as treats for family and friends grew into custom orders for birthdays, weddings, holidays, and every little reason to celebrate in between. Each cake, cookie, and pie is still made by hand, to order, with the same care that started it all.</p>
+      <p>No factory shortcuts, no day-old shelf — just fresh, homemade goodness made especially for you and the people you're sharing it with.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-ribbon" style="margin:1rem 0">
+  <div class="wrap">
+    <div class="txt"><span class="ic">💕</span><div><b>Ready to taste the difference?</b><span>Tell us what you're celebrating.</span></div></div>
+    <a href="order.html" class="btn">Start Your Order</a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">What We Believe</span>
+      <h2>The little things that make it blissful</h2>
+    </div>
+    <div class="values">
+      <div class="value reveal"><div class="ic">🥣</div><h3>From Scratch</h3><p>Real ingredients, mixed and baked by hand. Nothing pre-made — just honest, homemade flavor in every bite.</p></div>
+      <div class="value reveal"><div class="ic">🎨</div><h3>Made for You</h3><p>Your colors, your theme, your favorite flavors. Every order is customized to fit your occasion perfectly.</p></div>
+      <div class="value reveal"><div class="ic">💕</div><h3>With Care</h3><p>We bake for your family like we bake for our own — with attention, patience, and a whole lot of heart.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-cream">
+  <div class="wrap">
+    <div class="story-quote reveal">
+      <span class="eyebrow" style="justify-content:center;margin-bottom:1.4rem">In Faith's Words</span>
+      <blockquote>"There's nothing better than handing someone a treat I made myself and watching their whole face light up. That's the part I love most."</blockquote>
+      <div class="sig">Faith<span>Owner &amp; Baker</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="order-band reveal" style="background:var(--ink);color:var(--rose-mist);border-radius:26px;padding:3.4rem;text-align:center">
+      <h2 style="color:#fff;font-size:clamp(1.9rem,4vw,2.7rem);margin-bottom:.9rem">Let's bake something together</h2>
+      <p style="max-width:33rem;margin:0 auto 1.7rem;color:#e4d2d8">Whatever you're celebrating, I'd love to make it sweeter.</p>
+      <a href="order.html" class="btn btn-primary">Start Your Order</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div>
+      <div class="name-lg">Faith's Blissful Delights</div>
+      <p>Homemade, made-to-order cakes, cookies, pies &amp; treats for every occasion.</p>
+      <p class="place">Serving [Service Area] &middot; Local pickup</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <p><a href="index.html">Home</a></p>
+      <p><a href="menu.html">Menu &amp; Gallery</a></p>
+      <p><a href="about.html">About</a></p>
+      <p><a href="order.html">Order</a></p>
+    </div>
+    <div>
+      <h4>Get in Touch</h4>
+      <p><a href="tel:5742532807">(574) 253-2807</a></p>
+      <p><a href="mailto:violinteacher1@gmail.com">violinteacher1@gmail.com</a></p>
+      <p><a href="https://www.facebook.com/p/Faiths-Blissful-Delights-100063565023319/" target="_blank" rel="noopener">Facebook</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom wrap">© <span id="yr"></span> Faith's Blissful Delights · Baked fresh with love</div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Menu &amp; Gallery — Faith's Blissful Delights</title>
+<meta name="description" content="Browse our full menu and gallery — custom cakes, decorated cookies, cupcakes, pies, cheesecakes, fresh breads and sweet treats, all made to order.">
+<link rel="icon" href="img/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<style>
+.page-head{ padding:3.5rem 0 1rem; text-align:center; position:relative; z-index:1; }
+.page-head .eyebrow{ justify-content:center; margin-bottom:1rem; }
+.page-head h1{ font-size:clamp(2.4rem,6vw,4rem); margin-bottom:.8rem; }
+.page-head h1 em{ font-style:italic; color:var(--rose-deep); }
+.page-head p{ color:var(--ink-soft); max-width:40rem; margin:0 auto; font-size:1.08rem; }
+
+/* filter bar */
+.filters{ position:sticky; top:64px; z-index:30; display:flex; flex-wrap:wrap; gap:.6rem; justify-content:center;
+  padding:1.4rem 0; background:rgba(253,248,244,.9); backdrop-filter:blur(8px); margin-bottom:2rem; }
+.filters button{ font-family:var(--sans); font-size:.8rem; letter-spacing:.1em; text-transform:uppercase; font-weight:500;
+  padding:.6rem 1.25rem; border-radius:999px; border:1.5px solid var(--rose-soft); background:var(--white); color:var(--ink-soft);
+  cursor:pointer; transition:.25s; }
+.filters button:hover{ border-color:var(--rose); color:var(--ink); }
+.filters button.active{ background:var(--rose); border-color:var(--rose); color:#fff; }
+
+/* note */
+.menu-note{ text-align:center; max-width:46rem; margin:0 auto 2.5rem; color:var(--ink-soft); font-size:.96rem;
+  background:var(--rose-mist); border:1px solid var(--rose-soft); border-radius:14px; padding:1rem 1.4rem; }
+
+/* masonry gallery */
+.gallery{ columns:4; column-gap:1.2rem; }
+.g-item{ break-inside:avoid; margin-bottom:1.2rem; position:relative; border-radius:14px; overflow:hidden;
+  box-shadow:var(--shadow-sm); cursor:zoom-in; background:var(--cream); }
+.g-item img{ width:100%; display:block; transition:transform .6s cubic-bezier(.2,.7,.2,1); }
+.g-item::after{ content:""; position:absolute; inset:0; background:linear-gradient(to top, rgba(74,57,66,.55), transparent 45%);
+  opacity:0; transition:opacity .35s; }
+.g-cap{ position:absolute; left:0; right:0; bottom:0; padding:1rem; z-index:2; color:#fff; transform:translateY(8px);
+  opacity:0; transition:.35s; }
+.g-cap b{ font-family:var(--serif); font-size:1.05rem; font-weight:500; display:block; }
+.g-cap span{ font-size:.74rem; letter-spacing:.08em; text-transform:uppercase; color:var(--rose-soft); }
+.g-item:hover img{ transform:scale(1.05); }
+.g-item:hover::after{ opacity:1; }
+.g-item:hover .g-cap{ opacity:1; transform:none; }
+
+/* lightbox */
+.lightbox{ position:fixed; inset:0; z-index:200; background:rgba(40,28,34,.92); display:none;
+  align-items:center; justify-content:center; padding:4vw; cursor:zoom-out; flex-direction:column; gap:1rem; }
+.lightbox.open{ display:flex; }
+.lightbox img{ max-width:90vw; max-height:80vh; border-radius:12px; box-shadow:0 30px 80px rgba(0,0,0,.5); border:5px solid #fff; }
+.lb-cap{ color:#fff; font-family:var(--serif); font-size:1.1rem; font-style:italic; }
+.lb-close{ position:absolute; top:24px; right:30px; color:#fff; font-size:2rem; line-height:1; opacity:.8; }
+
+@media(max-width:1024px){ .gallery{ columns:3; } }
+@media(max-width:720px){ .gallery{ columns:2; column-gap:.8rem; } .g-item{ margin-bottom:.8rem; } .filters{ top:60px; } }
+@media(max-width:420px){ .gallery{ columns:1; } }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img class="mark" src="img/logo.svg" alt="">
+      <span class="name">Faith's Blissful Delights<span>Homemade with love</span></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="menu.html" class="active">Menu &amp; Gallery</a>
+      <a href="about.html">About</a>
+      <a href="order.html">Order</a>
+      <a href="order.html" class="btn btn-primary nav-cta">Order Now</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="page-head">
+  <div class="wrap">
+    <span class="eyebrow">Menu &amp; Gallery</span>
+    <h1>A gallery of <em>blissful</em> bakes</h1>
+    <p>Everything here was made to order. Use it for inspiration — almost anything can be customized for your flavors, colors, and occasion.</p>
+  </div>
+</section>
+
+<section class="cta-ribbon wrap-section" style="margin:1rem 0 2rem">
+  <div class="wrap">
+    <div class="txt"><span class="ic">🎂</span><div><b>See something you love?</b><span>Every item can be made for your occasion.</span></div></div>
+    <a href="order.html" class="btn">Request an Order</a>
+  </div>
+</section>
+
+<div class="filters" id="filters">
+  <button data-filter="all" class="active">All</button>
+  <button data-filter="cakes">Cakes</button>
+  <button data-filter="cookies">Cookies</button>
+  <button data-filter="cupcakes">Cupcakes</button>
+  <button data-filter="pies">Pies &amp; Cheesecakes</button>
+  <button data-filter="breads">Breads</button>
+  <button data-filter="treats">Treats</button>
+</div>
+
+<section class="section" style="padding-top:0" id="gallery">
+  <div class="wrap">
+    <p class="menu-note">💕 Pricing varies by size, design &amp; detail. Tell us what you have in mind on the <a href="order.html" style="color:var(--rose-deep);font-weight:600">order page</a> and we'll give you a quote.</p>
+
+    <div class="gallery" id="grid">
+      <!-- CAKES -->
+      <div class="g-item" data-cat="cakes"><img src="img/cake-wedding-rustic.jpg" alt="Rustic floral two-tier wedding cake"><div class="g-cap"><b>Rustic Wedding Cake</b><span>Cakes</span></div></div>
+      <div class="g-item" data-cat="cakes"><img src="img/cake-axolotl.jpg" alt="Axolotl under-the-sea birthday cake"><div class="g-cap"><b>Under-the-Sea Birthday</b><span>Cakes</span></div></div>
+      <div class="g-item" data-cat="cakes"><img src="img/cake-lambeth.jpg" alt="Vintage Lambeth piped cake in pink, blue and yellow"><div class="g-cap"><b>Vintage Lambeth</b><span>Cakes</span></div></div>
+      <div class="g-item" data-cat="cakes"><img src="img/cake-construction.jpg" alt="Construction truck birthday cake"><div class="g-cap"><b>Construction Site</b><span>Cakes</span></div></div>
+      <div class="g-item" data-cat="cakes"><img src="img/cake-pink-rose.jpg" alt="Pink and white buttercream rose cake"><div class="g-cap"><b>Buttercream Roses</b><span>Cakes</span></div></div>
+      <div class="g-item" data-cat="cakes"><img src="img/cake-watermelon.jpg" alt="Watermelon-themed summer cake"><div class="g-cap"><b>Watermelon Cake</b><span>Cakes</span></div></div>
+      <div class="g-item" data-cat="cakes"><img src="img/cake-starwars.jpg" alt="Star Wars galaxy birthday cake"><div class="g-cap"><b>Galaxy Theme</b><span>Cakes</span></div></div>
+      <div class="g-item" data-cat="cakes"><img src="img/cake-wedding-white.jpg" alt="Classic white tiered wedding cake"><div class="g-cap"><b>Classic Tiered Wedding</b><span>Cakes</span></div></div>
+      <div class="g-item" data-cat="cakes"><img src="img/cake-miss-to-mrs.jpg" alt="Miss to Mrs bridal shower cake"><div class="g-cap"><b>Bridal Shower</b><span>Cakes</span></div></div>
+      <div class="g-item" data-cat="cakes"><img src="img/cake-mocha-rose.jpg" alt="Mocha buttercream cake with orange roses"><div class="g-cap"><b>Mocha &amp; Roses</b><span>Cakes</span></div></div>
+      <div class="g-item" data-cat="cakes"><img src="img/cake-basketweave.jpg" alt="Basketweave cake with fresh flowers"><div class="g-cap"><b>Basketweave &amp; Florals</b><span>Cakes</span></div></div>
+
+      <!-- COOKIES -->
+      <div class="g-item" data-cat="cookies"><img src="img/cookies-easter-mm.jpg" alt="Pastel Easter candy cookies"><div class="g-cap"><b>Pastel Spring Cookies</b><span>Cookies</span></div></div>
+      <div class="g-item" data-cat="cookies"><img src="img/cookies-shamrock.jpg" alt="Piped shamrock St. Patrick's cookies"><div class="g-cap"><b>Shamrock Sugar Cookies</b><span>Cookies</span></div></div>
+      <div class="g-item" data-cat="cookies"><img src="img/cookies-heart-pink.jpg" alt="Pink piped heart cookies"><div class="g-cap"><b>Valentine Hearts</b><span>Cookies</span></div></div>
+      <div class="g-item" data-cat="cookies"><img src="img/cookies-christmas-platter.jpg" alt="Christmas cookie assortment platter"><div class="g-cap"><b>Holiday Cookie Tray</b><span>Cookies</span></div></div>
+      <div class="g-item" data-cat="cookies"><img src="img/cookies-patriotic-star.jpg" alt="Red white and blue star cookies"><div class="g-cap"><b>Patriotic Stars</b><span>Cookies</span></div></div>
+      <div class="g-item" data-cat="cookies"><img src="img/cookies-fall-pumpkin.jpg" alt="Fall pumpkin and acorn piped cookies"><div class="g-cap"><b>Autumn Harvest</b><span>Cookies</span></div></div>
+      <div class="g-item" data-cat="cookies"><img src="img/cookies-mickey-2022.jpg" alt="Graduation 2022 Mickey themed cookies"><div class="g-cap"><b>Celebration Numbers</b><span>Cookies</span></div></div>
+      <div class="g-item" data-cat="cookies"><img src="img/cookies-platter-mm.jpg" alt="Candy and piped cookie platter"><div class="g-cap"><b>Mixed Cookie Platter</b><span>Cookies</span></div></div>
+      <div class="g-item" data-cat="cookies"><img src="img/cookies-choc-chip.jpg" alt="Classic chocolate chip cookies"><div class="g-cap"><b>Chocolate Chip</b><span>Cookies</span></div></div>
+      <div class="g-item" data-cat="cookies"><img src="img/cookies-double-choc.jpg" alt="Double chocolate cookies with milk"><div class="g-cap"><b>Double Chocolate</b><span>Cookies</span></div></div>
+
+      <!-- CUPCAKES -->
+      <div class="g-item" data-cat="cupcakes"><img src="img/cupcakes-pink-teal.jpg" alt="Pink and teal swirl cupcakes"><div class="g-cap"><b>Swirl Cupcakes</b><span>Cupcakes</span></div></div>
+      <div class="g-item" data-cat="cupcakes"><img src="img/cupcakes-tower.jpg" alt="Wedding cupcake tower"><div class="g-cap"><b>Cupcake Tower</b><span>Cupcakes</span></div></div>
+      <div class="g-item" data-cat="cupcakes"><img src="img/cupcakes-ring-display.jpg" alt="Engagement ring cupcake display"><div class="g-cap"><b>Ring Display</b><span>Cupcakes</span></div></div>
+
+      <!-- PIES & CHEESECAKES -->
+      <div class="g-item" data-cat="pies"><img src="img/pie-cherry-lattice.jpg" alt="Cherry lattice pie"><div class="g-cap"><b>Cherry Lattice Pie</b><span>Pies</span></div></div>
+      <div class="g-item" data-cat="pies"><img src="img/pie-strawberry-pink.jpg" alt="Fresh strawberry pie"><div class="g-cap"><b>Fresh Strawberry Pie</b><span>Pies</span></div></div>
+      <div class="g-item" data-cat="pies"><img src="img/pie-strawberry-glass.jpg" alt="Glazed strawberry pie"><div class="g-cap"><b>Glazed Strawberry</b><span>Pies</span></div></div>
+      <div class="g-item" data-cat="pies"><img src="img/cheesecake-raspberry.jpg" alt="Raspberry swirl cheesecake"><div class="g-cap"><b>Raspberry Swirl Cheesecake</b><span>Cheesecakes</span></div></div>
+      <div class="g-item" data-cat="pies"><img src="img/cheesecake-wedding.jpg" alt="Wedding cheesecake with roses"><div class="g-cap"><b>Cheesecake Centerpiece</b><span>Cheesecakes</span></div></div>
+      <div class="g-item" data-cat="pies"><img src="img/tart-fruit-flag.jpg" alt="Fresh fruit flag tart"><div class="g-cap"><b>Fresh Fruit Tart</b><span>Pies</span></div></div>
+
+      <!-- BREADS -->
+      <div class="g-item" data-cat="breads"><img src="img/bread-loaves-4.jpg" alt="Four golden bread loaves"><div class="g-cap"><b>Homemade Bread</b><span>Breads</span></div></div>
+      <div class="g-item" data-cat="breads"><img src="img/bread-loaves-2.jpg" alt="Two fresh baked bread loaves"><div class="g-cap"><b>Fresh Loaves</b><span>Breads</span></div></div>
+
+      <!-- TREATS -->
+      <div class="g-item" data-cat="treats"><img src="img/treats-choc-strawberries.jpg" alt="Chocolate covered strawberries"><div class="g-cap"><b>Chocolate-Dipped Berries</b><span>Treats</span></div></div>
+      <div class="g-item" data-cat="treats"><img src="img/treats-buckeyes.jpg" alt="Peanut butter buckeye candies"><div class="g-cap"><b>Buckeyes</b><span>Treats</span></div></div>
+      <div class="g-item" data-cat="treats"><img src="img/treats-cowboy-hats.jpg" alt="Chocolate cowboy hat candies"><div class="g-cap"><b>Chocolate Cowboy Hats</b><span>Treats</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="order-band reveal" style="background:var(--ink);color:var(--rose-mist);border-radius:26px;padding:3.2rem;text-align:center">
+      <h2 style="color:#fff;font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:.8rem">See something you love?</h2>
+      <p style="max-width:32rem;margin:0 auto 1.6rem;color:#e4d2d8">Every item can be customized. Send us your idea and we'll make it yours.</p>
+      <a href="order.html" class="btn btn-primary">Request an Order</a>
+    </div>
+  </div>
+</section>
+
+<!-- lightbox -->
+<div class="lightbox" id="lightbox">
+  <span class="lb-close">&times;</span>
+  <img src="" alt="">
+  <div class="lb-cap"></div>
+</div>
+
+<footer class="footer">
+  <div class="wrap">
+    <div>
+      <div class="name-lg">Faith's Blissful Delights</div>
+      <p>Homemade, made-to-order cakes, cookies, pies &amp; treats for every occasion.</p>
+      <p class="place">Serving [Service Area] &middot; Local pickup</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <p><a href="index.html">Home</a></p>
+      <p><a href="menu.html">Menu &amp; Gallery</a></p>
+      <p><a href="about.html">About</a></p>
+      <p><a href="order.html">Order</a></p>
+    </div>
+    <div>
+      <h4>Get in Touch</h4>
+      <p><a href="tel:5742532807">(574) 253-2807</a></p>
+      <p><a href="mailto:violinteacher1@gmail.com">violinteacher1@gmail.com</a></p>
+      <p><a href="https://www.facebook.com/p/Faiths-Blissful-Delights-100063565023319/" target="_blank" rel="noopener">Facebook</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom wrap">© <span id="yr"></span> Faith's Blissful Delights · Baked fresh with love</div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

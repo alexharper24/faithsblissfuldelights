@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Faith's Blissful Delights — Homemade Baked Goods</title>
+<meta name="description" content="Faith's Blissful Delights — homemade cakes, cookies, pies, cupcakes & treats baked fresh to order. Custom cakes for birthdays, weddings & every celebration.">
+<link rel="icon" href="img/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ---------- HERO ---------- */
+.hero{ position:relative; z-index:1; padding:3.5rem 0 4.5rem; overflow:hidden; }
+.hero .wrap{ display:grid; grid-template-columns:1.05fr .95fr; gap:3.5rem; align-items:center; }
+.hero-copy .eyebrow{ margin-bottom:1.3rem; }
+.hero-copy h1{ font-size:clamp(2.7rem,6vw,4.6rem); line-height:1.02; margin-bottom:1.4rem; }
+.hero-copy h1 em{ font-style:italic; color:var(--rose-deep); }
+.hero-copy .lead{ font-size:1.18rem; color:var(--ink-soft); max-width:30rem; margin-bottom:2rem; }
+.hero-actions{ display:flex; gap:1rem; flex-wrap:wrap; }
+.hero-meta{ margin-top:2.4rem; display:flex; gap:2.2rem; flex-wrap:wrap; }
+.hero-meta div{ }
+.hero-meta b{ font-family:var(--serif); font-size:1.7rem; color:var(--rose-deep); font-weight:600; display:block; line-height:1; }
+.hero-meta span{ font-size:.76rem; letter-spacing:.18em; text-transform:uppercase; color:var(--ink-soft); }
+
+/* hero collage */
+.hero-art{ position:relative; height:520px; }
+.hero-art figure{ position:absolute; border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); border:6px solid var(--white); }
+.hero-art img{ width:100%; height:100%; object-fit:cover; }
+.hero-art .a{ width:62%; height:74%; top:0; right:0; z-index:2; }
+.hero-art .b{ width:46%; height:50%; bottom:0; left:0; z-index:3; }
+.hero-art .c{ width:34%; height:40%; top:38%; right:-4%; z-index:4; border-width:5px; }
+.hero-art .blob{ position:absolute; width:140%; height:140%; top:-20%; left:-20%; z-index:0;
+  background:radial-gradient(circle at 60% 40%, var(--rose-soft), transparent 62%); }
+.hero-badge{ position:absolute; bottom:8%; right:2%; z-index:5; width:118px; height:118px;
+  display:grid; place-items:center; text-align:center; border-radius:50%;
+  background:var(--ink); color:var(--rose-mist); font-family:var(--serif);
+  box-shadow:var(--shadow-sm); transform:rotate(-8deg); }
+.hero-badge b{ display:block; font-size:1.5rem; color:#fff; line-height:1; }
+.hero-badge span{ font-family:var(--sans); font-size:.56rem; letter-spacing:.2em; text-transform:uppercase; margin-top:4px; }
+
+/* ---------- categories ---------- */
+.cats{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.6rem; }
+.cat{ position:relative; border-radius:var(--radius); overflow:hidden; aspect-ratio:4/5; box-shadow:var(--shadow-sm); display:block; }
+.cat img{ width:100%; height:100%; object-fit:cover; transition:transform .7s cubic-bezier(.2,.7,.2,1); }
+.cat::after{ content:""; position:absolute; inset:0; background:linear-gradient(to top, rgba(74,57,66,.78) 0%, rgba(74,57,66,.12) 48%, transparent 70%); }
+.cat-label{ position:absolute; left:0; right:0; bottom:0; z-index:2; padding:1.4rem 1.5rem; color:#fff; }
+.cat-label h3{ color:#fff; font-size:1.5rem; margin-bottom:.15rem; }
+.cat-label span{ font-size:.78rem; letter-spacing:.06em; color:var(--rose-soft); display:inline-flex; align-items:center; gap:.4rem; }
+.cat:hover img{ transform:scale(1.06); }
+
+/* ---------- featured strip ---------- */
+.feat{ display:grid; grid-template-columns:repeat(4,1fr); gap:1.2rem; }
+.feat figure{ border-radius:14px; overflow:hidden; box-shadow:var(--shadow-sm); aspect-ratio:1; }
+.feat img{ width:100%; height:100%; object-fit:cover; transition:transform .6s ease; }
+.feat figure:hover img{ transform:scale(1.07); }
+
+/* ---------- about teaser ---------- */
+.about-teaser{ display:grid; grid-template-columns:.8fr 1.2fr; gap:3.5rem; align-items:center; }
+.about-teaser .photo{ border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); border:6px solid var(--white); }
+.about-teaser .photo img{ width:100%; aspect-ratio:4/5; object-fit:cover; object-position:center top; }
+.about-teaser blockquote{ font-family:var(--serif); font-size:clamp(1.5rem,3vw,2.1rem); font-style:italic; line-height:1.34; color:var(--ink); margin:1.2rem 0 1.6rem; }
+.about-teaser .sig{ font-family:var(--serif); font-size:1.15rem; color:var(--rose-deep); }
+
+/* ---------- order band ---------- */
+.order-band{ background:var(--ink); color:var(--rose-mist); border-radius:26px; padding:3.6rem; text-align:center; position:relative; overflow:hidden; }
+.order-band::before, .order-band::after{ content:""; position:absolute; width:260px; height:260px; border-radius:50%; background:radial-gradient(circle, rgba(217,138,158,.28), transparent 70%); }
+.order-band::before{ top:-120px; left:-60px; } .order-band::after{ bottom:-130px; right:-50px; }
+.order-band h2{ color:#fff; font-size:clamp(2rem,4vw,2.9rem); margin-bottom:1rem; position:relative; }
+.order-band p{ max-width:34rem; margin:0 auto 1.8rem; color:#e4d2d8; position:relative; }
+.order-band .btn-primary{ position:relative; }
+
+@media(max-width:860px){
+  .hero .wrap{ grid-template-columns:1fr; gap:2.5rem; }
+  .hero-art{ height:420px; order:-1; }
+  .cats{ grid-template-columns:1fr 1fr; }
+  .feat{ grid-template-columns:1fr 1fr; }
+  .about-teaser{ grid-template-columns:1fr; gap:2rem; }
+  .order-band{ padding:2.5rem 1.5rem; }
+}
+@media(max-width:520px){ .cats{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img class="mark" src="img/logo.svg" alt="">
+      <span class="name">Faith's Blissful Delights<span>Homemade with love</span></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" class="active">Home</a>
+      <a href="menu.html">Menu &amp; Gallery</a>
+      <a href="about.html">About</a>
+      <a href="order.html">Order</a>
+      <a href="order.html" class="btn btn-primary nav-cta">Order Now</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy reveal">
+      <span class="eyebrow">Homemade Bakery &middot; Made to Order</span>
+      <h1>Every occasion deserves something <em>blissful</em>.</h1>
+      <p class="lead">From custom celebration cakes to trays of hand-decorated cookies, fresh pies, and warm bread — baked from scratch and made just for you.</p>
+      <div class="hero-actions">
+        <a href="order.html" class="btn btn-primary">Request an Order</a>
+        <a href="menu.html" class="btn btn-ghost">Browse the Menu</a>
+      </div>
+      <div class="hero-meta">
+        <div><b>100%</b><span>From Scratch</span></div>
+        <div><b>Custom</b><span>Made to Order</span></div>
+        <div><b>Local</b><span>Pickup Available</span></div>
+      </div>
+    </div>
+
+    <div class="hero-art reveal">
+      <div class="blob"></div>
+      <figure class="a"><img src="img/cake-wedding-rustic.jpg" alt="Rustic floral tiered wedding cake"></figure>
+      <figure class="b"><img src="img/cookies-heart-pink.jpg" alt="Pink decorated heart cookies"></figure>
+      <figure class="c"><img src="img/pie-strawberry-pink.jpg" alt="Fresh strawberry pie"></figure>
+      <div class="hero-badge"><div><b>Fresh</b><span>Baked Daily</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="section section-cream">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">What We Bake</span>
+      <h2>A little something for everyone</h2>
+      <p>Browse a few of our favorites — then head to the full menu to see the whole spread.</p>
+    </div>
+    <div class="cats">
+      <a class="cat reveal" href="menu.html#cakes"><img src="img/cake-pink-rose.jpg" alt="Custom cakes"><div class="cat-label"><h3>Custom Cakes</h3><span>Birthdays, weddings &amp; themes &rarr;</span></div></a>
+      <a class="cat reveal" href="menu.html#cookies"><img src="img/cookies-easter-mm.jpg" alt="Decorated cookies"><div class="cat-label"><h3>Cookies</h3><span>Seasonal &amp; hand-decorated &rarr;</span></div></a>
+      <a class="cat reveal" href="menu.html#cupcakes"><img src="img/cupcakes-pink-teal.jpg" alt="Cupcakes"><div class="cat-label"><h3>Cupcakes</h3><span>By the dozen or display &rarr;</span></div></a>
+      <a class="cat reveal" href="menu.html#pies"><img src="img/pie-cherry-lattice.jpg" alt="Pies and cheesecakes"><div class="cat-label"><h3>Pies &amp; Cheesecakes</h3><span>Fruit, lattice &amp; swirl &rarr;</span></div></a>
+      <a class="cat reveal" href="menu.html#breads"><img src="img/bread-loaves-4.jpg" alt="Fresh breads"><div class="cat-label"><h3>Fresh Breads</h3><span>Baked golden &amp; warm &rarr;</span></div></a>
+      <a class="cat reveal" href="menu.html#treats"><img src="img/treats-choc-strawberries.jpg" alt="Sweet treats"><div class="cat-label"><h3>Treats &amp; Candies</h3><span>Buckeyes, dipped berries &amp; more &rarr;</span></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">From the Kitchen</span>
+      <h2>Recently baked &amp; loved</h2>
+      <p>A peek at custom orders that made someone's day extra sweet.</p>
+    </div>
+    <div class="feat">
+      <figure class="reveal"><img src="img/cake-axolotl.jpg" alt="Axolotl ocean birthday cake"></figure>
+      <figure class="reveal"><img src="img/cookies-fall-pumpkin.jpg" alt="Fall pumpkin and acorn cookies"></figure>
+      <figure class="reveal"><img src="img/cake-construction.jpg" alt="Construction truck birthday cake"></figure>
+      <figure class="reveal"><img src="img/cupcakes-tower.jpg" alt="Cupcake tower"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT TEASER -->
+<section class="section section-cream">
+  <div class="wrap about-teaser">
+    <div class="photo reveal"><img src="img/baker-faith.jpg" alt="Faith, the baker behind Faith's Blissful Delights"></div>
+    <div class="reveal">
+      <span class="eyebrow">Meet the Baker</span>
+      <blockquote>"I believe the best treats are made by hand, from scratch, and shared with the people you love."</blockquote>
+      <p>Faith's Blissful Delights began with a simple love of baking and a kitchen that always smelled like something wonderful. Every order is made to order with the same care you'd put into baking for your own family.</p>
+      <p style="margin-top:1rem"><a href="about.html" class="btn btn-ghost">Read Our Story</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER BAND -->
+<section class="section">
+  <div class="wrap">
+    <div class="order-band reveal">
+      <h2>Have a celebration coming up?</h2>
+      <p>Tell us what you're dreaming of — a theme, a flavor, a date — and we'll bake something blissful just for you.</p>
+      <a href="order.html" class="btn btn-primary">Start a Custom Order</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" id="contact">
+  <div class="wrap">
+    <div>
+      <div class="name-lg">Faith's Blissful Delights</div>
+      <p>Homemade, made-to-order cakes, cookies, pies &amp; treats for every occasion.</p>
+      <p class="place">Serving [Service Area] &middot; Local pickup</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <p><a href="index.html">Home</a></p>
+      <p><a href="menu.html">Menu &amp; Gallery</a></p>
+      <p><a href="about.html">About</a></p>
+      <p><a href="order.html">Order</a></p>
+    </div>
+    <div>
+      <h4>Get in Touch</h4>
+      <p><a href="tel:5742532807">(574) 253-2807</a></p>
+      <p><a href="mailto:violinteacher1@gmail.com">violinteacher1@gmail.com</a></p>
+      <p><a href="https://www.facebook.com/p/Faiths-Blissful-Delights-100063565023319/" target="_blank" rel="noopener">Facebook</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom wrap">
+    © <span id="yr"></span> Faith's Blissful Delights · Baked fresh with love
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
