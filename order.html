@@ -50,7 +50,8 @@
 .alt-contact{ text-align:center; margin-top:1rem; font-size:.9rem; color:var(--ink-soft); }
 /* form states */
 .form-thanks{ text-align:center; padding:1.5rem .5rem; animation:fadeUp .5s ease; }
-.form-thanks .ic{ font-size:2.6rem; margin-bottom:.6rem; }
+.form-thanks .thanks-badge{ width:64px; height:64px; border-radius:50%; background:var(--rose-mist); color:var(--rose-deep); display:grid; place-items:center; margin:0 auto 1rem; }
+.form-thanks .thanks-badge svg{ width:30px; height:30px; }
 .form-thanks h2{ font-size:1.8rem; margin-bottom:.6rem; color:var(--rose-deep); }
 .form-thanks p{ color:var(--ink-soft); max-width:24rem; margin:0 auto .6rem; }
 .form-thanks .small{ font-size:.86rem; }
@@ -64,7 +65,8 @@ button.is-sending{ opacity:.7; pointer-events:none; }
 .side-card h3{ color:#fff; font-size:1.3rem; margin-bottom:1rem; }
 .side-card .row{ display:flex; gap:.8rem; align-items:flex-start; margin-bottom:1rem; font-size:.95rem; }
 .side-card .row:last-child{ margin-bottom:0; }
-.side-card .row .ic{ font-size:1.1rem; flex:none; width:24px; text-align:center; }
+.side-card .row .ic{ flex:none; width:30px; height:30px; border-radius:8px; background:var(--rose-mist); color:var(--rose-deep); display:grid; place-items:center; }
+.side-card .row .ic svg{ width:17px; height:17px; }
 .side-card a{ color:#fff; border-bottom:1px solid rgba(255,255,255,.3); }
 .side-card a:hover{ color:var(--rose-soft); }
 .side-card .place{ color:var(--champagne); }
@@ -73,7 +75,7 @@ button.is-sending{ opacity:.7; pointer-events:none; }
 .info-card h3{ font-size:1.25rem; margin-bottom:.9rem; }
 .info-card ul{ list-style:none; }
 .info-card li{ font-size:.92rem; color:var(--ink-soft); padding-left:1.5rem; position:relative; margin-bottom:.7rem; line-height:1.5; }
-.info-card li::before{ content:"🧁"; position:absolute; left:0; font-size:.85rem; }
+.info-card li::before{ content:""; position:absolute; left:0; top:.55em; width:6px; height:6px; border-radius:50%; background:var(--rose); }
 .info-card .lead-time{ font-family:var(--serif); font-size:1.15rem; color:var(--rose-deep); font-style:italic; margin-top:.4rem; }
 
 @media(max-width:860px){
@@ -187,7 +189,7 @@ button.is-sending{ opacity:.7; pointer-events:none; }
           <p class="alt-contact">Prefer to talk? Call or text <a href="tel:5742532807" style="color:var(--rose-deep);font-weight:600">(574) 253-2807</a></p>
         </form>
         <div class="form-thanks" id="formThanks" hidden>
-          <div class="ic">🧁</div>
+          <div class="thanks-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></div>
           <h2>Thank you!</h2>
           <p>Your request is on its way to Faith. We'll be in touch soon with availability and a quote. Can't wait to bake for you!</p>
           <p class="small">Need it sooner? Call or text <a href="tel:5742532807">(574) 253-2807</a>.</p>
@@ -198,10 +200,10 @@ button.is-sending{ opacity:.7; pointer-events:none; }
       <aside>
         <div class="side-card reveal">
           <h3>Get in Touch</h3>
-          <div class="row"><span class="ic">📞</span><div>Call or text<br><a href="tel:5742532807">(574) 253-2807</a></div></div>
-          <div class="row"><span class="ic">✉️</span><div>Email<br><a href="mailto:violinteacher1@gmail.com">violinteacher1@gmail.com</a></div></div>
-          <div class="row"><span class="ic">📍</span><div>Pickup<br><span class="place">Local pickup in the Bellevue, OH area</span><br><span style="font-size:.82rem;color:#c9b3b9">Pickup address shared once your order is confirmed.</span></div></div>
-          <div class="row"><span class="ic">📘</span><div>Follow along<br><a href="https://www.facebook.com/p/Faiths-Blissful-Delights-100063565023319/" target="_blank" rel="noopener">Facebook</a></div></div>
+          <div class="row"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 3.5h3l1.2 4-1.8 1.4a12 12 0 0 0 5.2 5.2l1.4-1.8 4 1.2v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.5 5.7 2 2 0 0 1 6.5 3.5Z"/></svg></span><div>Call or text<br><a href="tel:5742532807">(574) 253-2807</a></div></div>
+          <div class="row"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6 8.5-6"/></svg></span><div>Email<br><a href="mailto:violinteacher1@gmail.com">violinteacher1@gmail.com</a></div></div>
+          <div class="row"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-5.4-6.5-10.5a6.5 6.5 0 0 1 13 0C18.5 15.6 12 21 12 21Z"/><circle cx="12" cy="10.5" r="2.3"/></svg></span><div>Pickup<br><span class="place">Local pickup in the <a href="https://www.google.com/maps/search/?api=1&amp;query=Bellevue%2C+OH" target="_blank" rel="noopener">Bellevue, OH area</a></span><br><span style="font-size:.82rem;color:#c9b3b9">Pickup address shared once your order is confirmed.</span></div></div>
+          <div class="row"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 8.5h2V5.7h-2.3c-2 0-3.2 1.2-3.2 3.3v1.7H8.3v2.8h2.2V21h2.9v-7.5h2.2l.4-2.8h-2.6V9.3c0-.6.3-.8.8-.8Z"/></svg></span><div>Follow along<br><a href="https://www.facebook.com/p/Faiths-Blissful-Delights-100063565023319/" target="_blank" rel="noopener">Facebook</a></div></div>
         </div>
 
         <div class="info-card reveal">
@@ -226,7 +228,7 @@ button.is-sending{ opacity:.7; pointer-events:none; }
     <div>
       <div class="name-lg">Faith's Blissful Delights</div>
       <p>Homemade, made-to-order cakes, cookies, pies &amp; treats for every occasion.</p>
-      <p class="place">Serving the Bellevue, OH area &middot; Local pickup</p>
+      <p class="place">Serving the <a href="https://www.google.com/maps/search/?api=1&amp;query=Bellevue%2C+OH" target="_blank" rel="noopener">Bellevue, OH area</a> &middot; Local pickup</p>
     </div>
     <div>
       <h4>Explore</h4>
