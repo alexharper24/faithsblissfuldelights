@@ -13,7 +13,6 @@
 </script>
 <title>Faith's Blissful Delights | Home Bakery in Bellevue, OH</title>
 <meta name="description" content="Homemade cakes, cookies, pies, cupcakes & treats baked fresh to order in Bellevue, Ohio. Custom cakes for birthdays, weddings & every celebration. Limited gluten-free, dairy-free & sugar-free options.">
-<meta name="keywords" content="bakery Bellevue Ohio, custom cakes Bellevue OH, home bakery, birthday cakes, wedding cakes, decorated cookies, pies, cupcakes, gluten free bakery Bellevue">
 <link rel="canonical" href="https://faithsblissfuldelights.com/">
 <meta name="robots" content="index, follow">
 <meta name="geo.region" content="US-OH">
@@ -62,10 +61,10 @@
 .hero-copy h1 em{ font-style:italic; color:var(--rose-deep); }
 .hero-copy .lead{ font-size:1.18rem; color:var(--ink-soft); max-width:30rem; margin-bottom:2rem; }
 .hero-actions{ display:flex; gap:1rem; flex-wrap:wrap; }
-.hero-meta{ margin-top:2.4rem; display:flex; gap:2.2rem; flex-wrap:wrap; }
-.hero-meta div{ }
-.hero-meta b{ font-family:var(--serif); font-size:1.7rem; color:var(--rose-deep); font-weight:600; display:block; line-height:1; }
-.hero-meta span{ font-size:.76rem; letter-spacing:.18em; text-transform:uppercase; color:var(--ink-soft); }
+/* plain, verifiable facts — not styled as pseudo-statistics */
+.hero-facts{ margin-top:2.2rem; display:flex; flex-wrap:wrap; gap:.55rem 1.6rem; list-style:none; }
+.hero-facts li{ display:flex; align-items:center; gap:.5rem; font-size:.9rem; color:var(--ink-soft); }
+.hero-facts li::before{ content:""; flex:none; width:5px; height:5px; border-radius:50%; background:var(--champagne); }
 
 /* hero collage */
 .hero-art{ position:relative; height:520px; }
@@ -108,7 +107,7 @@
 
 /* ---------- order band ---------- */
 .order-band{ background:var(--ink); color:var(--rose-mist); border-radius:26px; padding:3.6rem; text-align:center; position:relative; overflow:hidden; }
-.order-band::before, .order-band::after{ content:""; position:absolute; width:260px; height:260px; border-radius:50%; background:radial-gradient(circle, rgba(217,138,158,.28), transparent 70%); }
+.order-band::before, .order-band::after{ content:""; position:absolute; width:260px; height:260px; border-radius:50%; background:radial-gradient(circle, rgba(143,104,108,.34), transparent 70%); }
 .order-band::before{ top:-120px; left:-60px; } .order-band::after{ bottom:-130px; right:-50px; }
 .order-band h2{ color:#fff; font-size:clamp(2rem,4vw,2.9rem); margin-bottom:1rem; position:relative; }
 .order-band p{ max-width:34rem; margin:0 auto 1.8rem; color:#e4d2d8; position:relative; }
@@ -155,19 +154,20 @@
         <a href="order.html" class="btn btn-primary">Request an Order</a>
         <a href="menu.html" class="btn btn-ghost">Browse the Menu</a>
       </div>
-      <div class="hero-meta">
-        <div><b>100%</b><span>From Scratch</span></div>
-        <div><b>Custom</b><span>Made to Order</span></div>
-        <div><b>Local</b><span>Pickup Available</span></div>
-      </div>
+      <ul class="hero-facts">
+        <li>Baked from scratch</li>
+        <li>Made to order</li>
+        <li>About a week's notice</li>
+        <li>Local pickup in Bellevue</li>
+      </ul>
     </div>
 
     <div class="hero-art reveal">
       <div class="blob"></div>
-      <figure class="a"><img src="img/cake-wedding-rustic.jpg" alt="Rustic floral tiered wedding cake"></figure>
-      <figure class="b"><img src="img/cookies-heart-pink.jpg" alt="Pink decorated heart cookies"></figure>
-      <figure class="c"><img src="img/pie-strawberry-pink.jpg" alt="Fresh strawberry pie"></figure>
-      <div class="hero-badge"><div><b>Fresh</b><span>Baked Daily</span></div></div>
+      <figure class="a"><img src="img/cake-wedding-rustic.webp" alt="Rustic floral tiered wedding cake" fetchpriority="high" decoding="async"></figure>
+      <figure class="b"><img src="img/cookies-heart-pink.webp" alt="Pink decorated heart cookies"></figure>
+      <figure class="c"><img src="img/pie-strawberry-pink.webp" alt="Fresh strawberry pie"></figure>
+      <div class="hero-badge"><div><b>Made</b><span>to Order</span></div></div>
     </div>
   </div>
 </section>
@@ -181,12 +181,12 @@
       <p>Browse a few of our favorites, then head to the full menu to see the whole spread.</p>
     </div>
     <div class="cats">
-      <a class="cat reveal" href="menu.html#cakes"><img src="img/cake-pink-rose.jpg" alt="Custom cakes"><div class="cat-label"><h3>Custom Cakes</h3><span>Birthdays, weddings &amp; themes &rarr;</span></div></a>
-      <a class="cat reveal" href="menu.html#cookies"><img src="img/cookies-easter-mm.jpg" alt="Decorated cookies"><div class="cat-label"><h3>Cookies</h3><span>Seasonal &amp; hand-decorated &rarr;</span></div></a>
-      <a class="cat reveal" href="menu.html#cupcakes"><img src="img/cupcakes-pink-teal.jpg" alt="Cupcakes"><div class="cat-label"><h3>Cupcakes</h3><span>By the dozen or display &rarr;</span></div></a>
-      <a class="cat reveal" href="menu.html#pies"><img src="img/pie-cherry-lattice.jpg" alt="Pies and cheesecakes"><div class="cat-label"><h3>Pies &amp; Cheesecakes</h3><span>Fruit, lattice &amp; swirl &rarr;</span></div></a>
-      <a class="cat reveal" href="menu.html#breads"><img src="img/bread-loaves-4.jpg" alt="Fresh breads"><div class="cat-label"><h3>Fresh Breads</h3><span>Baked golden &amp; warm &rarr;</span></div></a>
-      <a class="cat reveal" href="menu.html#treats"><img src="img/treats-choc-strawberries.jpg" alt="Sweet treats"><div class="cat-label"><h3>Treats &amp; Candies</h3><span>Buckeyes, dipped berries &amp; more &rarr;</span></div></a>
+      <a class="cat reveal" href="menu.html#cakes"><img src="img/cake-pink-rose.webp" alt="Custom cakes" loading="lazy" decoding="async"><div class="cat-label"><h3>Custom Cakes</h3><span>Birthdays, weddings &amp; themes &rarr;</span></div></a>
+      <a class="cat reveal" href="menu.html#cookies"><img src="img/cookies-easter-mm.webp" alt="Decorated cookies" loading="lazy" decoding="async"><div class="cat-label"><h3>Cookies</h3><span>Seasonal &amp; hand-decorated &rarr;</span></div></a>
+      <a class="cat reveal" href="menu.html#cupcakes"><img src="img/cupcakes-pink-teal.webp" alt="Cupcakes" loading="lazy" decoding="async"><div class="cat-label"><h3>Cupcakes</h3><span>By the dozen or display &rarr;</span></div></a>
+      <a class="cat reveal" href="menu.html#pies"><img src="img/pie-cherry-lattice.webp" alt="Pies and cheesecakes" loading="lazy" decoding="async"><div class="cat-label"><h3>Pies &amp; Cheesecakes</h3><span>Fruit, lattice &amp; swirl &rarr;</span></div></a>
+      <a class="cat reveal" href="menu.html#breads"><img src="img/bread-loaves-4.webp" alt="Fresh breads" loading="lazy" decoding="async"><div class="cat-label"><h3>Fresh Breads</h3><span>Baked golden &amp; warm &rarr;</span></div></a>
+      <a class="cat reveal" href="menu.html#treats"><img src="img/treats-choc-strawberries.webp" alt="Sweet treats" loading="lazy" decoding="async"><div class="cat-label"><h3>Treats &amp; Candies</h3><span>Buckeyes, dipped berries &amp; more &rarr;</span></div></a>
     </div>
   </div>
 </section>
@@ -200,10 +200,10 @@
       <p>A peek at custom orders that made someone's day extra sweet.</p>
     </div>
     <div class="feat">
-      <figure class="reveal"><img src="img/cake-axolotl.jpg" alt="Axolotl ocean birthday cake"></figure>
-      <figure class="reveal"><img src="img/cookies-fall-pumpkin.jpg" alt="Fall pumpkin and acorn cookies"></figure>
-      <figure class="reveal"><img src="img/cake-construction.jpg" alt="Construction truck birthday cake"></figure>
-      <figure class="reveal"><img src="img/cupcakes-tower.jpg" alt="Cupcake tower"></figure>
+      <figure class="reveal"><img src="img/cake-axolotl.webp" alt="Axolotl ocean birthday cake" loading="lazy" decoding="async"></figure>
+      <figure class="reveal"><img src="img/cookies-fall-pumpkin.webp" alt="Fall pumpkin and acorn cookies" loading="lazy" decoding="async"></figure>
+      <figure class="reveal"><img src="img/cake-construction.webp" alt="Construction truck birthday cake" loading="lazy" decoding="async"></figure>
+      <figure class="reveal"><img src="img/cupcakes-tower.webp" alt="Cupcake tower" loading="lazy" decoding="async"></figure>
     </div>
   </div>
 </section>
@@ -211,7 +211,7 @@
 <!-- ABOUT TEASER -->
 <section class="section section-cream">
   <div class="wrap about-teaser">
-    <div class="photo reveal"><img src="img/baker-faith.jpg" alt="Faith, the baker behind Faith's Blissful Delights"></div>
+    <div class="photo reveal"><img src="img/baker-faith.webp" alt="Faith, the baker behind Faith's Blissful Delights" loading="lazy" decoding="async"></div>
     <div class="reveal">
       <span class="eyebrow">Meet the Baker</span>
       <blockquote>"I believe the best treats are made by hand, from scratch, and shared with the people you love."</blockquote>

@@ -6,20 +6,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Jost:wght@300;400;500;600&display=swap');
 
 :root{
-  --rose:        #d98a9e;   /* primary dusty rose */
-  --rose-deep:   #b86a7e;   /* deeper rose for hover/contrast */
-  --rose-soft:   #f3d9df;   /* light blush */
-  --rose-mist:   #faecef;   /* palest blush wash */
-  --ivory:       #fdf8f4;   /* page background */
-  --cream:       #f7ede6;   /* section alt background */
-  --ink:         #4a3942;   /* soft charcoal-plum (body text) */
-  --ink-soft:    #6e5b63;   /* muted text */
-  --champagne:   #c9a96a;   /* gold accent */
-  --champagne-d: #a8884b;
+  /* ---- Core palette, sampled from Faith's hand-painted logo ----------------
+     Every value below is taken from the pixels of img/logo-faith.png, and each
+     is contrast-checked against WCAG AA (4.5:1 for normal text). The previous
+     palette failed AA in four places, including the primary Order Now button
+     at 2.60:1 — the ratios noted here are the reason for each choice.        */
+  --plum:          #824d5a;  /* logo mixer body   — 6.65:1 on white  */
+  --plum-deep:     #6d3f4e;  /* hover / active    — 8.50:1 on white  */
+  --plum-tint:     #e8d7db;  /* borders, ghost-button hover          */
+  --plum-wash:     #f6edef;  /* palest wash       — 9.35:1 on ink    */
+  --mauve:         #8f686c;  /* logo mixing bowl  — 4.81:1 on white  */
+  --terracotta:    #905732;  /* logo flowers      — 5.54:1 on ivory  */
+  --terracotta-d:  #7d4a26;
+  --terracotta-lt: #d8a877;  /* lifted for dark grounds — 5.01:1 on ink.
+                                The base terracotta is only 1.84:1 there, so
+                                anything sitting on the footer needs this.  */
+
+  /* ---- Legacy aliases -----------------------------------------------------
+     The original stylesheet named these after the old rose/champagne scheme
+     and the names are referenced throughout all five pages. Rather than
+     rewrite every call site, they now point at the logo-derived values above.
+     Prefer the semantic names for anything new.                            */
+  --rose:        var(--plum);
+  --rose-deep:   var(--plum-deep);
+  --rose-soft:   var(--plum-tint);
+  --rose-mist:   var(--plum-wash);
+  --champagne:   var(--terracotta);
+  --champagne-d: var(--terracotta-d);
+
+  --ivory:       #fdf8f4;   /* page background      — unchanged */
+  --cream:       #f7ede6;   /* section alt bg       — unchanged */
+  --ink:         #4a3942;   /* body text — 10.18:1 on ivory, unchanged */
+  --ink-soft:    #6e5b63;   /* muted text — 5.96:1 on ivory, unchanged */
   --white:       #ffffff;
   --shadow:      26px 30px 60px -30px rgba(74,57,66,.35);
   --shadow-sm:   0 14px 30px -16px rgba(74,57,66,.30);
   --radius:      18px;
+  --radius-btn:  12px;      /* buttons & interactive chips — squared, not pills */
   --maxw:        1180px;
 
   --serif: 'Fraunces', Georgia, 'Times New Roman', serif;
@@ -61,7 +84,7 @@ a{ color:inherit; text-decoration:none; }
   display:inline-flex; align-items:center; gap:.55rem;
   font-family:var(--sans); font-weight:500; font-size:.94rem;
   letter-spacing:.04em; text-transform:uppercase;
-  padding:.95rem 1.9rem; border-radius:999px;
+  padding:.95rem 1.9rem; border-radius:var(--radius-btn);
   border:1.5px solid transparent; cursor:pointer;
   transition:transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
 }
@@ -88,10 +111,14 @@ a{ color:inherit; text-decoration:none; }
 .nav-links a:hover, .nav-links a.active{ color:var(--ink); }
 .nav-links a:hover::after, .nav-links a.active::after{ width:100%; }
 .nav-cta{ margin-left:.4rem; }
-/* higher specificity than `.nav-links a` above, so the button keeps real
-   padding (that rule's `padding:.2rem 0` was squashing the text to the edges)
-   and gets squared-off corners */
-.nav-links a.nav-cta{ padding:.7rem 1.5rem; border-radius:12px; }
+/* Higher specificity than `.nav-links a` above, which otherwise wins over
+   `.btn-primary` on two properties and breaks the button:
+     - its `padding:.2rem 0` squashed the text against the button edges;
+     - its `color:var(--ink-soft)` overrode the button's white text, leaving
+       muted ink on a saturated fill (1.06:1 — effectively invisible).
+   Both are pinned here. The corner radius comes from --radius-btn on .btn. */
+.nav-links a.nav-cta{ padding:.7rem 1.5rem; color:var(--white); }
+.nav-links a.nav-cta:hover, .nav-links a.nav-cta.active{ color:var(--white); }
 /* it's a button, not a text link — drop the underline indicator that was
    cutting across the letters */
 .nav-links a.nav-cta::after{ display:none; }
@@ -105,8 +132,10 @@ a{ color:inherit; text-decoration:none; }
 .footer .name-lg{ font-family:var(--serif); font-size:1.5rem; color:var(--white); margin-bottom:.6rem; }
 .footer a, .footer p{ color:#d8c6cc; font-size:.92rem; line-height:1.9; }
 .footer a:hover{ color:var(--rose-soft); }
-.footer .place{ color:var(--champagne); }
-.footer-bottom{ text-align:center; margin-top:2.5rem; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,.12); font-size:.78rem; letter-spacing:.04em; color:#a98e96; }
+/* the terracotta accent is too dark to sit on the ink footer (1.84:1), so the
+   lifted variant is used here instead — 5.01:1 */
+.footer .place{ color:var(--terracotta-lt); }
+.footer-bottom{ text-align:center; margin-top:2.5rem; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,.12); font-size:.78rem; letter-spacing:.04em; color:#c3b0b6; }
 
 /* ---------- shared section bits ---------- */
 .eyebrow{ font-family:var(--sans); font-size:.74rem; letter-spacing:.32em; text-transform:uppercase; color:var(--rose-deep); font-weight:600; display:inline-flex; align-items:center; gap:.6rem; }

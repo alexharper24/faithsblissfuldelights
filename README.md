@@ -27,9 +27,11 @@ No remaining placeholders.
 
 
 ## Logo
-The site uses Faith's real logo: `img/logo-faith.png` in the header (the teal
-mixer emblem with the photographed paper background removed), and `img/favicon.png`
-(just the mixer) as the browser tab icon. The header tagline reads
+The site uses Faith's real logo: `img/logo-faith.png` in the header (the
+hand-painted watercolour stand-mixer emblem — dusty plum mixer, warm taupe bowl,
+and a laurel of leaves and flowers — with the photographed paper background
+removed, so it has a real alpha channel), and `img/favicon.png` (just the mixer)
+as the browser tab icon. The header tagline reads
 "It's all about the Buttercream!" 
 
 ## How the order form works (Formspree)

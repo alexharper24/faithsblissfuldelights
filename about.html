@@ -31,7 +31,7 @@
 .about-hero .photo{ border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); border:7px solid var(--white); position:relative; }
 .about-hero .photo img{ width:100%; aspect-ratio:4/5; object-fit:cover; object-position:center top; }
 .about-hero .photo .tag{ position:absolute; bottom:1rem; left:1rem; background:var(--ink); color:#fff; font-family:var(--serif);
-  font-style:italic; padding:.5rem 1.1rem; border-radius:999px; font-size:.95rem; box-shadow:var(--shadow-sm); }
+  font-style:italic; padding:.5rem 1.1rem; border-radius:var(--radius-btn); font-size:.95rem; box-shadow:var(--shadow-sm); }
 .about-hero h1{ font-size:clamp(2.4rem,5.5vw,3.8rem); margin:1rem 0 1.2rem; }
 .about-hero h1 em{ font-style:italic; color:var(--rose-deep); }
 .about-hero p{ color:var(--ink-soft); font-size:1.1rem; margin-bottom:1rem; }
@@ -76,7 +76,7 @@
 <section class="about-hero">
   <div class="wrap">
     <div class="photo reveal">
-      <img src="img/baker-faith.jpg" alt="Faith, the baker behind Faith's Blissful Delights">
+      <img src="img/baker-faith.webp" alt="Faith, the baker behind Faith's Blissful Delights" fetchpriority="high" decoding="async">
       <span class="tag">Hi, I'm Faith</span>
     </div>
     <div class="reveal">
