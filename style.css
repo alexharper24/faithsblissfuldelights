@@ -88,6 +88,13 @@ a{ color:inherit; text-decoration:none; }
 .nav-links a:hover, .nav-links a.active{ color:var(--ink); }
 .nav-links a:hover::after, .nav-links a.active::after{ width:100%; }
 .nav-cta{ margin-left:.4rem; }
+/* higher specificity than `.nav-links a` above, so the button keeps real
+   padding (that rule's `padding:.2rem 0` was squashing the text to the edges)
+   and gets squared-off corners */
+.nav-links a.nav-cta{ padding:.7rem 1.5rem; border-radius:12px; }
+/* it's a button, not a text link — drop the underline indicator that was
+   cutting across the letters */
+.nav-links a.nav-cta::after{ display:none; }
 .nav-toggle{ display:none; background:none; border:0; cursor:pointer; padding:.4rem; }
 .nav-toggle span{ display:block; width:24px; height:2px; background:var(--ink); margin:5px 0; transition:.3s; border-radius:2px; }
 
