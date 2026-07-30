@@ -1,3 +1,16 @@
+// Failsafe first, deliberately before anything else in this file.
+// Content marked .reveal is hidden by CSS until the observer below adds .in. If
+// any code further down throws, that observer would never be created and the page
+// would stay blank, so this timer force-reveals everything regardless. It also
+// covers the case where IntersectionObserver exists but never fires — browsers
+// throttle it in backgrounded or non-composited tabs.
+setTimeout(function () {
+  document.querySelectorAll('.reveal:not(.in)').forEach(function (el) {
+    el.style.transitionDelay = '0ms';
+    el.classList.add('in');
+  });
+}, 2500);
+
 // mobile nav
 const toggle = document.getElementById('navToggle');
 const links = document.getElementById('navLinks');
@@ -29,16 +42,25 @@ const yr = document.getElementById('yr');
 if (yr) yr.textContent = new Date().getFullYear();
 
 // scroll reveal
-const obs = new IntersectionObserver((entries) => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) {
-      e.target.style.transitionDelay = Math.min(i * 60, 240) + 'ms';
-      e.target.classList.add('in');
-      obs.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+const revealEls = document.querySelectorAll('.reveal');
+const wantsLessMotion = window.matchMedia &&
+  window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (!('IntersectionObserver' in window) || wantsLessMotion) {
+  // No observer support, or the reader asked for less motion: just show it all.
+  revealEls.forEach(el => { el.style.transitionDelay = '0ms'; el.classList.add('in'); });
+} else {
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        e.target.style.transitionDelay = Math.min(i * 60, 240) + 'ms';
+        e.target.classList.add('in');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => obs.observe(el));
+}
 
 // gallery filter (menu page)
 const filterBtns = document.querySelectorAll('[data-filter]');
