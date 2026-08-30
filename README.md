@@ -37,6 +37,12 @@ Search and Business Profile work, as of 2026-08-30:
   property, not a URL-prefix one: DNS is on Cloudflare (`marlowe`/`jerome.ns.
   cloudflare.com`) with no TXT records on the apex yet, and a Domain property
   covers the http/www variants in one go.
+- **Click "Validate Fix" on the Products report in Search Console.** The six
+  `hasOfferCatalog` entries were typed `Product` with only a name, which Google
+  rejects unless `offers`, `review` or `aggregateRating` is present. They are now
+  typed `Service`, which is the accurate type for made-to-order baking and
+  carries no such requirement. Fixed and deployed 2026-08-30. Validation takes a
+  couple of weeks to run once requested.
 - **Once the Google Business Profile verification lands**, add to the `Bakery`
   schema in `index.html`:
   - `geo` latitude and longitude taken from the verified profile. Do not guess
