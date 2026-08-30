@@ -25,6 +25,44 @@ to re-theme the whole site.
 
 No remaining placeholders.
 
+## Pending
+
+Search and Business Profile work, as of 2026-08-30:
+
+- **Turn on "Enforce HTTPS"** in Settings > Pages. `http://faithsblissfuldelights.com/`
+  currently answers 200 without redirecting, so the site is reachable on both
+  protocols. The canonicals all point at HTTPS, so this is tidy-up rather than
+  breakage, but it should be on before Google crawls in earnest.
+- **Submit `sitemap.xml` in Google Search Console.** Verify as a *Domain*
+  property, not a URL-prefix one: DNS is on Cloudflare (`marlowe`/`jerome.ns.
+  cloudflare.com`) with no TXT records on the apex yet, and a Domain property
+  covers the http/www variants in one go.
+- **Once the Google Business Profile verification lands**, add to the `Bakery`
+  schema in `index.html`:
+  - `geo` latitude and longitude taken from the verified profile. Do not guess
+    these. The schema block carries a comment saying the same.
+  - the Business Profile URL, appended to `sameAs` (currently Facebook only).
+  - Confirm the phone on the profile matches the site exactly. The site uses
+    `(574) 253-2807` in all 19 places it appears, which is a northern Indiana
+    area code for an Ohio business. If that is correct, fine, but the two must
+    match character for character or the local pack suffers.
+- **`about.html` is the thinnest page at 325 words** and was deliberately left
+  alone. Its copy is generic because the specifics were never supplied, and
+  inventing a founding year, a birth order or a "baking since" date is exactly
+  the failure mode to avoid. It needs a few real sentences from Faith before it
+  can grow.
+
+Deliberate, do not "fix":
+
+- `style.css` has no `@media (prefers-color-scheme: dark)` block and no
+  `@media print` block. The site checks report both as warnings. The dark-mode
+  omission was measured on this site on 2026-07-31: `color-scheme: light only`
+  on `:root` is what prevents the inversion, and an override block would wash
+  out the intentionally dark footer. See `.claude/guides/p2-open-items.md`.
+- `img/logo-faith.png` is superseded by `img/logo-faith.webp` for display but
+  stays tracked. It still backs the `logo` field in the schema, where a PNG is
+  the safer bet for the Knowledge Panel.
+
 
 ## Logo
 The site uses Faith's real logo: `img/logo-faith.png` in the header (the
