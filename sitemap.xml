@@ -1,35 +1,238 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <!-- overview.html is intentionally absent: it duplicates the whole site and is
-       marked noindex, so it must not compete with these pages in search. -->
+       marked noindex, so it must not compete with these pages in search.
+       Image entries are generated from the <img> tags actually on each page, so
+       the gallery can be found in Google Images. Alt text doubles as the caption. -->
   <url>
     <loc>https://faithsblissfuldelights.com/</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/cake-wedding-rustic.webp</image:loc>
+      <image:title>Rustic floral tiered wedding cake</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/cookies-heart-pink.webp</image:loc>
+      <image:title>Pink decorated heart cookies</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/pie-strawberry-pink.webp</image:loc>
+      <image:title>Fresh strawberry pie</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/cake-pink-rose.webp</image:loc>
+      <image:title>Custom cakes</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/cookies-easter-mm.webp</image:loc>
+      <image:title>Decorated cookies</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/cupcakes-pink-teal.webp</image:loc>
+      <image:title>Cupcakes</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/pie-cherry-lattice.webp</image:loc>
+      <image:title>Pies and cheesecakes</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/bread-loaves-4.webp</image:loc>
+      <image:title>Fresh breads</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/treats-choc-strawberries.webp</image:loc>
+      <image:title>Sweet treats</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/cake-axolotl.webp</image:loc>
+      <image:title>Axolotl ocean birthday cake</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/cookies-fall-pumpkin.webp</image:loc>
+      <image:title>Fall pumpkin and acorn cookies</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/cake-construction.webp</image:loc>
+      <image:title>Construction truck birthday cake</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/cupcakes-tower.webp</image:loc>
+      <image:title>Cupcake tower</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/baker-faith.webp</image:loc>
+      <image:title>Faith, the baker behind Faith&apos;s Blissful Delights</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://faithsblissfuldelights.com/menu.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/cake-wedding-rustic.webp</image:loc>
+      <image:title>Rustic floral two-tier wedding cake</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/cake-axolotl.webp</image:loc>
+      <image:title>Axolotl under-the-sea birthday cake</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/cake-lambeth.webp</image:loc>
+      <image:title>Vintage Lambeth piped cake in pink, blue and yellow</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/cake-construction.webp</image:loc>
+      <image:title>Construction truck birthday cake</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/cake-pink-rose.webp</image:loc>
+      <image:title>Pink and white buttercream rose cake</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/cake-watermelon.webp</image:loc>
+      <image:title>Watermelon-themed summer cake</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/cake-starwars.webp</image:loc>
+      <image:title>Star Wars galaxy birthday cake</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/cake-wedding-white.webp</image:loc>
+      <image:title>Classic white tiered wedding cake</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/cake-miss-to-mrs.webp</image:loc>
+      <image:title>Miss to Mrs bridal shower cake</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/cake-mocha-rose.webp</image:loc>
+      <image:title>Mocha buttercream cake with orange roses</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/cake-basketweave.webp</image:loc>
+      <image:title>Basketweave cake with fresh flowers</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/cookies-easter-mm.webp</image:loc>
+      <image:title>Pastel Easter candy cookies</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/cookies-shamrock.webp</image:loc>
+      <image:title>Piped shamrock St. Patrick&apos;s cookies</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/cookies-heart-pink.webp</image:loc>
+      <image:title>Pink piped heart cookies</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/cookies-christmas-platter.webp</image:loc>
+      <image:title>Christmas cookie assortment platter</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/cookies-patriotic-star.webp</image:loc>
+      <image:title>Red white and blue star cookies</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/cookies-fall-pumpkin.webp</image:loc>
+      <image:title>Fall pumpkin and acorn piped cookies</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/cookies-mickey-2022.webp</image:loc>
+      <image:title>Graduation 2022 Mickey themed cookies</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/cookies-platter-mm.webp</image:loc>
+      <image:title>Candy and piped cookie platter</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/cookies-choc-chip.webp</image:loc>
+      <image:title>Classic chocolate chip cookies</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/cookies-double-choc.webp</image:loc>
+      <image:title>Double chocolate cookies with milk</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/cupcakes-pink-teal.webp</image:loc>
+      <image:title>Pink and teal swirl cupcakes</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/cupcakes-tower.webp</image:loc>
+      <image:title>Wedding cupcake tower</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/cupcakes-ring-display.webp</image:loc>
+      <image:title>Engagement ring cupcake display</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/pie-cherry-lattice.webp</image:loc>
+      <image:title>Cherry lattice pie</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/pie-strawberry-pink.webp</image:loc>
+      <image:title>Fresh strawberry pie</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/pie-strawberry-glass.webp</image:loc>
+      <image:title>Glazed strawberry pie</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/cheesecake-raspberry.webp</image:loc>
+      <image:title>Raspberry swirl cheesecake</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/cheesecake-wedding.webp</image:loc>
+      <image:title>Wedding cheesecake with roses</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/tart-fruit-flag.webp</image:loc>
+      <image:title>Fresh fruit flag tart</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/bread-loaves-4.webp</image:loc>
+      <image:title>Four golden bread loaves</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/bread-loaves-2.webp</image:loc>
+      <image:title>Two fresh baked bread loaves</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/treats-choc-strawberries.webp</image:loc>
+      <image:title>Chocolate covered strawberries</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/treats-buckeyes.webp</image:loc>
+      <image:title>Peanut butter buckeye candies</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/treats-cowboy-hats.webp</image:loc>
+      <image:title>Chocolate cowboy hat candies</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://faithsblissfuldelights.com/order.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://faithsblissfuldelights.com/faq.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://faithsblissfuldelights.com/about.html</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/baker-faith.webp</image:loc>
+      <image:title>Faith, the baker behind Faith&apos;s Blissful Delights</image:title>
+    </image:image>
   </url>
 </urlset>

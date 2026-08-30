@@ -18,7 +18,7 @@
 </script>
 <title>Order | Faith's Blissful Delights — Custom Cakes Bellevue, OH</title>
 <meta name="description" content="Place a custom order with Faith's Blissful Delights in Bellevue, Ohio. Tell us your occasion, date, flavors and design, and we'll bake something blissful for you.">
-<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="icon" type="image/png" href="img/favicon.png?v=4">
 <link rel="canonical" href="https://faithsblissfuldelights.com/order.html">
 <meta name="geo.region" content="US-OH">
 <meta name="geo.placename" content="Bellevue, Ohio">
@@ -50,7 +50,7 @@
   ]
 }
 </script>
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=4">
 <style>
 .order-head{ padding:3.5rem 0 1rem; text-align:center; }
 .order-head .eyebrow{ justify-content:center; margin-bottom:1rem; }
@@ -127,7 +127,7 @@ button.is-sending{ opacity:.7; pointer-events:none; }
 <header class="nav">
   <div class="wrap">
     <a class="brand" href="index.html">
-      <img class="mark" src="img/logo-faith.png" alt="Faith's Blissful Delights logo">
+      <img class="mark" src="img/logo-faith.webp" width="263" height="224" alt="Faith's Blissful Delights logo">
       <span class="name">Faith's Blissful Delights<span>It's all about the Buttercream!</span></span>
     </a>
     <nav class="nav-links" id="navLinks">
@@ -166,7 +166,7 @@ button.is-sending{ opacity:.7; pointer-events:none; }
       <div class="form-card reveal">
         <h2>Custom Order Request</h2>
         <p class="sub">No payment now. This just starts the conversation. Required fields are marked with *.</p>
-        <!-- Formspree: replace YOUR_FORM_ID with the ID from your Formspree dashboard -->
+        <!-- Formspree endpoint, live. See the notes by the submit handler below. -->
         <form id="orderForm" action="https://formspree.io/f/xjgdwvov" method="POST">
           <input type="hidden" name="_subject" value="New Custom Order Request | Faith's Blissful Delights">
           <!-- honeypot spam trap (leave empty; bots fill it) -->
@@ -285,11 +285,13 @@ button.is-sending{ opacity:.7; pointer-events:none; }
   <div class="footer-bottom wrap">© <span id="yr"></span> Faith's Blissful Delights · Baked fresh with love · Site by <a href="https://harperstudio.co/" target="_blank" rel="noopener">Harper Studio</a></div>
 </footer>
 
-<script src="main.js?v=3"></script>
+<script src="main.js?v=4"></script>
 <script>
 // Custom order form -> Formspree (AJAX) with on-page thank-you message.
-// SETUP: in the <form> tag above, replace YOUR_FORM_ID in the action URL
-// with the form ID from your Formspree dashboard (e.g. https://formspree.io/f/abcdwxyz).
+// The endpoint is live and wired to Faith's inbox. The guard below validates the
+// action against the real Formspree URL shape rather than looking for a leftover
+// placeholder, so a mistyped or half-edited endpoint fails loudly instead of
+// silently swallowing an order.
 (function(){
   const form = document.getElementById('orderForm');
   const thanks = document.getElementById('formThanks');
@@ -302,8 +304,8 @@ button.is-sending{ opacity:.7; pointer-events:none; }
     const prevErr = form.querySelector('.form-error');
     if (prevErr) prevErr.remove();
 
-    if (form.action.includes('YOUR_FORM_ID')) {
-      showError("This form isn't connected yet. Add your Formspree form ID to the form's action, or call/text us at (574) 253-2807.");
+    if (!/formspree\.io\/f\/\w+$/.test(form.action)) {
+      showError("This form isn't connected right now. Please call or text us at (574) 253-2807 and we'll take your order that way.");
       return;
     }
 

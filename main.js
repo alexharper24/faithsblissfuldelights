@@ -65,21 +65,44 @@ if (!('IntersectionObserver' in window) || wantsLessMotion) {
 // gallery filter (menu page)
 const filterBtns = document.querySelectorAll('[data-filter]');
 if (filterBtns.length) {
+  // Applying a filter lives in its own function so a category link arriving from
+  // the homepage (menu.html#cakes) can run it on load, not just a button click.
+  const applyFilter = (f, scroll) => {
+    let matched = false;
+    filterBtns.forEach(b => {
+      const on = b.dataset.filter === f;
+      b.classList.toggle('active', on);
+      if (on) matched = true;
+    });
+    if (!matched) return false;           // unknown hash: leave the grid alone
+    document.querySelectorAll('.g-item').forEach(item => {
+      item.style.display = (f === 'all' || item.dataset.cat === f) ? '' : 'none';
+    });
+    if (scroll) {
+      document.getElementById('gallery')?.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+    return true;
+  };
+
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       const f = btn.dataset.filter;
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      document.querySelectorAll('.g-item').forEach(item => {
-        const show = f === 'all' || item.dataset.cat === f;
-        item.style.display = show ? '' : 'none';
-      });
-      // smooth scroll to gallery top on mobile
-      if (window.innerWidth < 700) {
-        document.getElementById('gallery')?.scrollIntoView({behavior:'smooth', block:'start'});
-      }
+      applyFilter(f, window.innerWidth < 700);
+      // Keep the address bar in step so a filtered view can be linked and shared.
+      // replaceState rather than a real hash change, so Back still leaves the page.
+      history.replaceState(null, '', f === 'all' ? location.pathname : '#' + f);
     });
   });
+
+  // The homepage category cards link to menu.html#cakes, #cookies and friends.
+  // Nothing on this page carries those ids, so without this the hash matches
+  // nothing and the visitor lands on the full unfiltered grid instead.
+  const filterFromHash = () => {
+    const f = decodeURIComponent(location.hash).replace('#', '').trim();
+    if (f) applyFilter(f, false);
+  };
+  filterFromHash();
+  window.addEventListener('hashchange', filterFromHash);
 }
 
 // lightbox (menu page)

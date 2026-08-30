@@ -33,8 +33,8 @@
 <meta name="twitter:title" content="Faith's Blissful Delights | Home Bakery in Bellevue, OH">
 <meta name="twitter:description" content="Homemade cakes, cookies, pies & treats baked fresh to order in Bellevue, Ohio.">
 <meta name="twitter:image" content="https://faithsblissfuldelights.com/img/cake-wedding-rustic.jpg">
-<link rel="icon" type="image/png" href="img/favicon.png">
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="icon" type="image/png" href="img/favicon.png?v=4">
+<link rel="stylesheet" href="style.css?v=4">
 <!-- Canonical business record. Other pages reference this by @id rather than
      repeating it. Deliberately omitted: `geo` (no verified coordinates - add them
      from the Google Business Profile once it exists, don't guess) and
@@ -149,6 +149,11 @@
 /* ---------- about teaser ---------- */
 .about-teaser{ display:grid; grid-template-columns:.8fr 1.2fr; gap:3.5rem; align-items:center; }
 .about-teaser .photo{ border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); border:6px solid var(--white); }
+.towns{ display:flex; flex-wrap:wrap; justify-content:center; gap:.6rem; max-width:640px; margin:0 auto; }
+.towns span{ font-size:.86rem; letter-spacing:.06em; color:var(--ink-soft); background:var(--plum-wash);
+             border:1px solid var(--plum-tint); border-radius:999px; padding:.44rem 1rem; }
+.towns-note{ max-width:66ch; margin:1.8rem auto 0; text-align:center; color:var(--ink-soft); font-size:1rem; line-height:1.75; }
+.towns-note a{ color:var(--plum); text-decoration:underline; }
 .about-teaser .photo img{ width:100%; aspect-ratio:4/5; object-fit:cover; object-position:center top; }
 .about-teaser blockquote{ font-family:var(--serif); font-size:clamp(1.5rem,3vw,2.1rem); font-style:italic; line-height:1.34; color:var(--ink); margin:1.2rem 0 1.6rem; }
 .about-teaser .sig{ font-family:var(--serif); font-size:1.15rem; color:var(--rose-deep); }
@@ -178,7 +183,7 @@
 <header class="nav">
   <div class="wrap">
     <a class="brand" href="index.html">
-      <img class="mark" src="img/logo-faith.png" alt="Faith's Blissful Delights logo">
+      <img class="mark" src="img/logo-faith.webp" width="263" height="224" alt="Faith's Blissful Delights logo">
       <span class="name">Faith's Blissful Delights<span>It's all about the Buttercream!</span></span>
     </a>
     <nav class="nav-links" id="navLinks">
@@ -214,9 +219,9 @@
 
     <div class="hero-art reveal">
       <div class="blob"></div>
-      <figure class="a"><img src="img/cake-wedding-rustic.webp" alt="Rustic floral tiered wedding cake" fetchpriority="high" decoding="async"></figure>
-      <figure class="b"><img src="img/cookies-heart-pink.webp" alt="Pink decorated heart cookies"></figure>
-      <figure class="c"><img src="img/pie-strawberry-pink.webp" alt="Fresh strawberry pie"></figure>
+      <figure class="a"><img src="img/cake-wedding-rustic.webp" width="600" height="800" alt="Rustic floral tiered wedding cake" fetchpriority="high" decoding="async"></figure>
+      <figure class="b"><img src="img/cookies-heart-pink.webp" width="500" height="439" alt="Pink decorated heart cookies"></figure>
+      <figure class="c"><img src="img/pie-strawberry-pink.webp" width="500" height="667" alt="Fresh strawberry pie"></figure>
       <div class="hero-badge"><div><b>Made</b><span>to Order</span></div></div>
     </div>
   </div>
@@ -231,12 +236,12 @@
       <p>Browse a few of our favorites, then head to the full menu to see the whole spread.</p>
     </div>
     <div class="cats">
-      <a class="cat reveal" href="menu.html#cakes"><img src="img/cake-pink-rose.webp" alt="Custom cakes" loading="lazy" decoding="async"><div class="cat-label"><h3>Custom Cakes</h3><span>Birthdays, weddings &amp; themes &rarr;</span></div></a>
-      <a class="cat reveal" href="menu.html#cookies"><img src="img/cookies-easter-mm.webp" alt="Decorated cookies" loading="lazy" decoding="async"><div class="cat-label"><h3>Cookies</h3><span>Seasonal &amp; hand-decorated &rarr;</span></div></a>
-      <a class="cat reveal" href="menu.html#cupcakes"><img src="img/cupcakes-pink-teal.webp" alt="Cupcakes" loading="lazy" decoding="async"><div class="cat-label"><h3>Cupcakes</h3><span>By the dozen or display &rarr;</span></div></a>
-      <a class="cat reveal" href="menu.html#pies"><img src="img/pie-cherry-lattice.webp" alt="Pies and cheesecakes" loading="lazy" decoding="async"><div class="cat-label"><h3>Pies &amp; Cheesecakes</h3><span>Fruit, lattice &amp; swirl &rarr;</span></div></a>
-      <a class="cat reveal" href="menu.html#breads"><img src="img/bread-loaves-4.webp" alt="Fresh breads" loading="lazy" decoding="async"><div class="cat-label"><h3>Fresh Breads</h3><span>Baked golden &amp; warm &rarr;</span></div></a>
-      <a class="cat reveal" href="menu.html#treats"><img src="img/treats-choc-strawberries.webp" alt="Sweet treats" loading="lazy" decoding="async"><div class="cat-label"><h3>Treats &amp; Candies</h3><span>Buckeyes, dipped berries &amp; more &rarr;</span></div></a>
+      <a class="cat reveal" href="menu.html#cakes"><img src="img/cake-pink-rose.webp" width="1050" height="1400" alt="Custom cakes" loading="lazy" decoding="async"><div class="cat-label"><h3>Custom Cakes</h3><span>Birthdays, weddings &amp; themes &rarr;</span></div></a>
+      <a class="cat reveal" href="menu.html#cookies"><img src="img/cookies-easter-mm.webp" width="583" height="583" alt="Decorated cookies" loading="lazy" decoding="async"><div class="cat-label"><h3>Cookies</h3><span>Seasonal &amp; hand-decorated &rarr;</span></div></a>
+      <a class="cat reveal" href="menu.html#cupcakes"><img src="img/cupcakes-pink-teal.webp" width="1050" height="1400" alt="Cupcakes" loading="lazy" decoding="async"><div class="cat-label"><h3>Cupcakes</h3><span>By the dozen or display &rarr;</span></div></a>
+      <a class="cat reveal" href="menu.html#pies"><img src="img/pie-cherry-lattice.webp" width="1050" height="1400" alt="Pies and cheesecakes" loading="lazy" decoding="async"><div class="cat-label"><h3>Pies &amp; Cheesecakes</h3><span>Fruit, lattice &amp; swirl &rarr;</span></div></a>
+      <a class="cat reveal" href="menu.html#breads"><img src="img/bread-loaves-4.webp" width="1050" height="1400" alt="Fresh breads" loading="lazy" decoding="async"><div class="cat-label"><h3>Fresh Breads</h3><span>Baked golden &amp; warm &rarr;</span></div></a>
+      <a class="cat reveal" href="menu.html#treats"><img src="img/treats-choc-strawberries.webp" width="752" height="1020" alt="Sweet treats" loading="lazy" decoding="async"><div class="cat-label"><h3>Treats &amp; Candies</h3><span>Buckeyes, dipped berries &amp; more &rarr;</span></div></a>
     </div>
   </div>
 </section>
@@ -250,18 +255,46 @@
       <p>A peek at custom orders that made someone's day extra sweet.</p>
     </div>
     <div class="feat">
-      <figure class="reveal"><img src="img/cake-axolotl.webp" alt="Axolotl ocean birthday cake" loading="lazy" decoding="async"></figure>
-      <figure class="reveal"><img src="img/cookies-fall-pumpkin.webp" alt="Fall pumpkin and acorn cookies" loading="lazy" decoding="async"></figure>
-      <figure class="reveal"><img src="img/cake-construction.webp" alt="Construction truck birthday cake" loading="lazy" decoding="async"></figure>
-      <figure class="reveal"><img src="img/cupcakes-tower.webp" alt="Cupcake tower" loading="lazy" decoding="async"></figure>
+      <figure class="reveal"><img src="img/cake-axolotl.webp" width="1091" height="1400" alt="Axolotl ocean birthday cake" loading="lazy" decoding="async"></figure>
+      <figure class="reveal"><img src="img/cookies-fall-pumpkin.webp" width="720" height="960" alt="Fall pumpkin and acorn cookies" loading="lazy" decoding="async"></figure>
+      <figure class="reveal"><img src="img/cake-construction.webp" width="1257" height="1400" alt="Construction truck birthday cake" loading="lazy" decoding="async"></figure>
+      <figure class="reveal"><img src="img/cupcakes-tower.webp" width="752" height="1020" alt="Cupcake tower" loading="lazy" decoding="async"></figure>
     </div>
+  </div>
+</section>
+
+<!-- SERVICE AREA
+     Every fact here already appears elsewhere on the site or in the Bakery
+     schema (the eight towns are the schema's areaServed list, the lead time and
+     the pickup rule come from the FAQ). Nothing here is new information about
+     the business, so nothing here needs Faith to verify it. -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Service Area</span>
+      <h2>Custom cakes for Bellevue and the towns nearby</h2>
+      <p>Faith's Blissful Delights is a home bakery in Bellevue, Ohio. Orders are
+         collected by local pickup, and the pickup address is shared once your
+         order is confirmed.</p>
+    </div>
+    <div class="towns reveal">
+      <span>Bellevue</span><span>Clyde</span><span>Castalia</span><span>Monroeville</span><span>Norwalk</span><span>Milan</span><span>Sandusky</span><span>Fremont</span>
+    </div>
+    <p class="towns-note reveal">
+      Birthdays, weddings, bridal showers, holidays and all the small occasions in
+      between. About a week's notice is preferred, and rush orders are sometimes
+      possible for a fee. Limited gluten-free, dairy-free and sugar-free options
+      are available, so mention what you need when you order. The
+      <a href="faq.html">frequently asked questions</a> cover lead times, pricing
+      and pickup in more detail.
+    </p>
   </div>
 </section>
 
 <!-- ABOUT TEASER -->
 <section class="section section-cream">
   <div class="wrap about-teaser">
-    <div class="photo reveal"><img src="img/baker-faith.webp" alt="Faith, the baker behind Faith's Blissful Delights" loading="lazy" decoding="async"></div>
+    <div class="photo reveal"><img src="img/baker-faith.webp" width="900" height="1125" alt="Faith, the baker behind Faith's Blissful Delights" loading="lazy" decoding="async"></div>
     <div class="reveal">
       <span class="eyebrow">Meet the Baker</span>
       <blockquote>"I believe the best treats are made by hand, from scratch, and shared with the people you love."</blockquote>
@@ -310,6 +343,6 @@
   </div>
 </footer>
 
-<script src="main.js?v=3"></script>
+<script src="main.js?v=4"></script>
 </body>
 </html>
