@@ -39,6 +39,14 @@
      repeating it. Deliberately omitted: `geo` (no verified coordinates - add them
      from the Google Business Profile once it exists, don't guess) and
      `openingHours` (made-to-order, so there are no storefront hours to publish). -->
+<!-- The hasOfferCatalog items below are typed Service, not Product, and must stay
+     that way. Google's Product rich-result validator requires offers, review or
+     aggregateRating on any node typed Product, and flagged all six as invalid in
+     Search Console on 2026-08-25. Neither remedy is available honestly: every order
+     is quoted individually so there are no prices to publish, and inventing review
+     or rating markup is fabricated proof. These are made-to-order services rather
+     than stocked goods, so Service is both the accurate type and free of that
+     requirement. Do not "fix" this back to Product by attaching placeholder offers. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -80,12 +88,12 @@
     "@type": "OfferCatalog",
     "name": "Made to order",
     "itemListElement": [
-      { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Custom celebration cakes" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Wedding cakes" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Hand-decorated cookies" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Cupcakes" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Pies and cheesecakes" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Fresh breads" } }
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom celebration cakes", "serviceType": "Custom cake baking" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Wedding cakes", "serviceType": "Wedding cake baking" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hand-decorated cookies", "serviceType": "Decorated cookie baking" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cupcakes", "serviceType": "Cupcake baking" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pies and cheesecakes", "serviceType": "Pie and cheesecake baking" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fresh breads", "serviceType": "Fresh bread baking" } }
     ]
   },
   "sameAs": ["https://www.facebook.com/p/Faiths-Blissful-Delights-100063565023319/"]
