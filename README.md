@@ -45,8 +45,11 @@ Search and Business Profile work, as of 2026-08-30:
   couple of weeks to run once requested.
 - **Once the Google Business Profile verification lands**, add to the `Bakery`
   schema in `index.html`:
-  - `geo` latitude and longitude taken from the verified profile. Do not guess
-    these. The schema block carries a comment saying the same.
+  - `geo` and street address: **settled, do not add.** The profile was verified
+    2026-08-30 as a service-area business, so Google hides the address itself.
+    Publishing coordinates would put a home location on the site and contradict
+    order.html, which promises the pickup address only after confirmation. The
+    town-level locality, region and postal code stay as they are.
   - the Business Profile URL, appended to `sameAs` (currently Facebook only).
   - Confirm the phone on the profile matches the site exactly. The site uses
     `(574) 253-2807` in all 19 places it appears, which is a northern Indiana
