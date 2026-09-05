@@ -45,6 +45,11 @@
      location on her own site in machine-readable form and contradict both. The
      locality, region and postal code below are town-level and stay. Also omitted:
      `openingHours` (made-to-order, so there are no storefront hours to publish). -->
+<!-- The Google entry in sameAs below is the Knowledge Graph id form
+     (kgmid=/g/11zfb1ywrf), deliberately not the Maps place URL. A Maps URL embeds
+     the map centre as @lat,lng, which would put coordinates back on a site that
+     deliberately carries none, and those URLs change shape over time. The kgmid
+     identifies the same listing, is stable, and holds no location data. -->
 <!-- The hasOfferCatalog items below are typed Service, not Product, and must stay
      that way. Google's Product rich-result validator requires offers, review or
      aggregateRating on any node typed Product, and flagged all six as invalid in
@@ -102,7 +107,10 @@
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fresh breads", "serviceType": "Fresh bread baking" } }
     ]
   },
-  "sameAs": ["https://www.facebook.com/p/Faiths-Blissful-Delights-100063565023319/"]
+  "sameAs": [
+    "https://www.facebook.com/p/Faiths-Blissful-Delights-100063565023319/",
+    "https://www.google.com/search?kgmid=/g/11zfb1ywrf"
+  ]
 }
 </script>
 <script type="application/ld+json">
