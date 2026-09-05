@@ -50,7 +50,10 @@ Search and Business Profile work, as of 2026-08-30:
     Publishing coordinates would put a home location on the site and contradict
     order.html, which promises the pickup address only after confirmation. The
     town-level locality, region and postal code stay as they are.
-  - the Business Profile URL, appended to `sameAs` (currently Facebook only).
+  - ~~the Business Profile URL, appended to `sameAs`~~ **done 2026-08-30.** Uses
+    the Knowledge Graph id form (`kgmid=/g/11zfb1ywrf`), not a Maps place URL,
+    which would have embedded `@lat,lng` coordinates. See the comment above the
+    schema block.
   - Confirm the phone on the profile matches the site exactly. The site uses
     `(574) 253-2807` in all 19 places it appears, which is a northern Indiana
     area code for an Ohio business. If that is correct, fine, but the two must
