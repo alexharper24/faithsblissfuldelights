@@ -40,14 +40,20 @@ looks like Google's auto-suggested nearby areas accepted at signup, since
 Bloomingville and North Monroeville are tiny unincorporated places nobody would
 volunteer when describing their own catchment.
 
-So neither list is sourced. Before treating either as true, **ask Faith which
-towns she actually wants orders from.** Then make the site and the profile agree.
+**Resolved 2026-08-30:** Alex's call is that the service area covers the
+surrounding towns, so the two lists are merged rather than one replacing the
+other. `areaServed` in the schema now carries all twelve. The visible chip row on
+the homepage still carries the recognisable eight, because Bloomingville and
+North Monroeville are poor reading in body copy even though they are useful to a
+crawler. Humans get eight, machines get twelve.
 
-The current site copy is defensible in the meantime: it says pickup is "an easy
-drive from" those towns, which is a true statement about geography rather than a
-claim that she delivers there. The schema's `areaServed` is the weaker part, since
-it does assert service. Left as-is pending Faith's answer rather than quietly
-swapped for a second unsourced list.
+Still worth confirming with Faith when convenient, since the underlying lists
+were inferred rather than given. Nothing here claims delivery: the copy says
+pickup is "an easy drive from" those towns, which is a statement about geography.
+
+The Business Profile still needs the five missing towns added to match
+(Castalia, Norwalk, Milan, Sandusky, Fremont). Google allows up to 20 service
+areas and the profile currently has 7.
 
 ## Pending
 

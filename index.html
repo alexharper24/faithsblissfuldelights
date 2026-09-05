@@ -45,6 +45,13 @@
      location on her own site in machine-readable form and contradict both. The
      locality, region and postal code below are town-level and stay. Also omitted:
      `openingHours` (made-to-order, so there are no storefront hours to publish). -->
+<!-- areaServed carries twelve towns; the visible chips on the page carry eight.
+     That split is deliberate. The last four (Flat Rock, York, Bloomingville,
+     North Monroeville) are the immediate surrounding areas taken from the Google
+     Business Profile itself, so they are worth asserting to machines for
+     hyper-local matching. They are poor reading in body copy, though: they are
+     tiny unincorporated places, and a visitor scanning a chip row wants the towns
+     they recognise. Humans get the eight, crawlers get all twelve. -->
 <!-- The Google entry in sameAs below is the Knowledge Graph id form
      (kgmid=/g/11zfb1ywrf), deliberately not the Maps place URL. A Maps URL embeds
      the map centre as @lat,lng, which would put coordinates back on a site that
@@ -92,7 +99,11 @@
     { "@type": "City", "name": "Norwalk", "addressRegion": "OH" },
     { "@type": "City", "name": "Milan", "addressRegion": "OH" },
     { "@type": "City", "name": "Sandusky", "addressRegion": "OH" },
-    { "@type": "City", "name": "Fremont", "addressRegion": "OH" }
+    { "@type": "City", "name": "Fremont", "addressRegion": "OH" },
+    { "@type": "City", "name": "Flat Rock", "addressRegion": "OH" },
+    { "@type": "City", "name": "York", "addressRegion": "OH" },
+    { "@type": "City", "name": "Bloomingville", "addressRegion": "OH" },
+    { "@type": "City", "name": "North Monroeville", "addressRegion": "OH" }
   ],
   "servesCuisine": "Bakery, Desserts",
   "hasOfferCatalog": {
