@@ -25,6 +25,30 @@ to re-theme the whole site.
 
 No remaining placeholders.
 
+## Service area: the town list is inferred, not confirmed
+
+**The seven towns named beyond Bellevue were never supplied by Faith.** Commit
+`3f5562c` (2026-07-30) chose Clyde, Castalia, Monroeville, Norwalk, Milan,
+Sandusky and Fremont as places "within about 20 minutes of Bellevue". That was a
+geographic inference made during an SEO pass. The only service-area fact Faith
+actually confirmed is the line above: **"Bellevue, OH area"**.
+
+The Google Business Profile, checked 2026-08-30, carries a *different* seven:
+Flat Rock, York, Clyde, Bloomingville, Bellevue, Monroeville and North
+Monroeville. Only Bellevue, Clyde and Monroeville appear on both lists. That list
+looks like Google's auto-suggested nearby areas accepted at signup, since
+Bloomingville and North Monroeville are tiny unincorporated places nobody would
+volunteer when describing their own catchment.
+
+So neither list is sourced. Before treating either as true, **ask Faith which
+towns she actually wants orders from.** Then make the site and the profile agree.
+
+The current site copy is defensible in the meantime: it says pickup is "an easy
+drive from" those towns, which is a true statement about geography rather than a
+claim that she delivers there. The schema's `areaServed` is the weaker part, since
+it does assert service. Left as-is pending Faith's answer rather than quietly
+swapped for a second unsourced list.
+
 ## Pending
 
 Search and Business Profile work, as of 2026-08-30:
