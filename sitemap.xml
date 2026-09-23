@@ -117,10 +117,6 @@
       <image:title>Basketweave cake with fresh flowers</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://faithsblissfuldelights.com/img/cake-cupcake.webp</image:loc>
-      <image:title>Sunburst buttercream cake with matching swirled cupcakes on tiered stands</image:title>
-    </image:image>
-    <image:image>
       <image:loc>https://faithsblissfuldelights.com/img/cookies-easter-mm.webp</image:loc>
       <image:title>Pastel Easter candy cookies</image:title>
     </image:image>
@@ -171,6 +167,10 @@
     <image:image>
       <image:loc>https://faithsblissfuldelights.com/img/cupcakes-ring-display.webp</image:loc>
       <image:title>Engagement ring cupcake display</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/cupcakes-sunburst.webp</image:loc>
+      <image:title>Sunburst buttercream cake with matching swirled cupcakes on tiered stands</image:title>
     </image:image>
     <image:image>
       <image:loc>https://faithsblissfuldelights.com/img/pie-cherry-lattice.webp</image:loc>
@@ -233,7 +233,7 @@
   </url>
   <url>
     <loc>https://faithsblissfuldelights.com/faq.html</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>

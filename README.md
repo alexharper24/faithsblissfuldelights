@@ -35,9 +35,13 @@ Name the pair `category-descriptor` to match the gallery filters (`cake-`,
 without `exif=` strips all metadata, which matters on a home bakery because a phone
 photo can carry the GPS position of the kitchen it was taken in.
 
-Added 2026-09-22 from `source-photos/`: `cake-cupcake`, `bread-cinnamon-rolls`
-(from `cinamon rolls.jpg`) and `bread-scones` (from `scones.jpg`). None of the three
-originals carried GPS data.
+Added 2026-09-22 from `source-photos/`: `cupcakes-sunburst` (from
+`cake-cupcake.jpg`), `bread-cinnamon-rolls` (from `cinamon rolls.jpg`) and
+`bread-scones` (from `scones.jpg`). None of the three originals carried GPS data.
+`cupcakes-sunburst` is cropped, dropping the top 21% of the original to remove
+bystanders' legs and feet, which also cuts the feather centerpiece down to a
+sliver. The uncropped original is still in `source-photos/` if that ever needs
+revisiting.
 
 ## Service area: the town list is inferred, not confirmed
 
