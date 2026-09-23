@@ -25,6 +25,20 @@ to re-theme the whole site.
 
 No remaining placeholders.
 
+## Photos
+
+Camera originals live in `source-photos/`, which is gitignored, and never get
+committed. Each gallery photo ships as a pair in `img/`, a web-sized `.jpg` and a
+`.webp` at 1400px on the long edge, and the `.webp` is what the pages reference.
+Name the pair `category-descriptor` to match the gallery filters (`cake-`,
+`cookies-`, `cupcakes-`, `pie-`, `bread-`, `treats-`). Saving through Pillow
+without `exif=` strips all metadata, which matters on a home bakery because a phone
+photo can carry the GPS position of the kitchen it was taken in.
+
+Added 2026-09-22 from `source-photos/`: `cake-cupcake`, `bread-cinnamon-rolls`
+(from `cinamon rolls.jpg`) and `bread-scones` (from `scones.jpg`). None of the three
+originals carried GPS data.
+
 ## Service area: the town list is inferred, not confirmed
 
 **The seven towns named beyond Bellevue were never supplied by Faith.** Commit

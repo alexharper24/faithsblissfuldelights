@@ -1,0 +1,3 @@
+# Camera originals stay local. Only the web-sized derivatives in img/ are
+# committed. See the "Photos" section of README.md.
+source-photos/

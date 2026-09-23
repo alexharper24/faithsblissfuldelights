@@ -69,7 +69,7 @@
   </url>
   <url>
     <loc>https://faithsblissfuldelights.com/menu.html</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -115,6 +115,10 @@
     <image:image>
       <image:loc>https://faithsblissfuldelights.com/img/cake-basketweave.webp</image:loc>
       <image:title>Basketweave cake with fresh flowers</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/cake-cupcake.webp</image:loc>
+      <image:title>Sunburst buttercream cake with matching swirled cupcakes on tiered stands</image:title>
     </image:image>
     <image:image>
       <image:loc>https://faithsblissfuldelights.com/img/cookies-easter-mm.webp</image:loc>
@@ -199,6 +203,14 @@
     <image:image>
       <image:loc>https://faithsblissfuldelights.com/img/bread-loaves-2.webp</image:loc>
       <image:title>Two fresh baked bread loaves</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/bread-cinnamon-rolls.webp</image:loc>
+      <image:title>Pan of iced cinnamon rolls</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://faithsblissfuldelights.com/img/bread-scones.webp</image:loc>
+      <image:title>Tray of glazed scones, several with blueberries</image:title>
     </image:image>
     <image:image>
       <image:loc>https://faithsblissfuldelights.com/img/treats-choc-strawberries.webp</image:loc>
