@@ -69,48 +69,16 @@ Still worth confirming with Faith when convenient, since the underlying lists
 were inferred rather than given. Nothing here claims delivery: the copy says
 pickup is "an easy drive from" those towns, which is a statement about geography.
 
-The Business Profile still needs the five missing towns added to match
-(Castalia, Norwalk, Milan, Sandusky, Fremont). Google allows up to 20 service
-areas and the profile currently has 7.
+The Business Profile carries the same twelve since 2026-09-22, when Castalia,
+Norwalk, Milan, Sandusky and Fremont were added to the seven it already had.
 
 ## Pending
 
-Search and Business Profile work, as of 2026-08-30:
-
-- **Turn on "Enforce HTTPS"** in Settings > Pages. `http://faithsblissfuldelights.com/`
-  currently answers 200 without redirecting, so the site is reachable on both
-  protocols. The canonicals all point at HTTPS, so this is tidy-up rather than
-  breakage, but it should be on before Google crawls in earnest.
-- **Submit `sitemap.xml` in Google Search Console.** Verify as a *Domain*
-  property, not a URL-prefix one: DNS is on Cloudflare (`marlowe`/`jerome.ns.
-  cloudflare.com`) with no TXT records on the apex yet, and a Domain property
-  covers the http/www variants in one go.
-- **Click "Validate Fix" on the Products report in Search Console.** The six
-  `hasOfferCatalog` entries were typed `Product` with only a name, which Google
-  rejects unless `offers`, `review` or `aggregateRating` is present. They are now
-  typed `Service`, which is the accurate type for made-to-order baking and
-  carries no such requirement. Fixed and deployed 2026-08-30. Validation takes a
-  couple of weeks to run once requested.
-- **Once the Google Business Profile verification lands**, add to the `Bakery`
-  schema in `index.html`:
-  - `geo` and street address: **settled, do not add.** The profile was verified
-    2026-08-30 as a service-area business, so Google hides the address itself.
-    Publishing coordinates would put a home location on the site and contradict
-    order.html, which promises the pickup address only after confirmation. The
-    town-level locality, region and postal code stay as they are.
-  - ~~the Business Profile URL, appended to `sameAs`~~ **done 2026-08-30.** Uses
-    the Knowledge Graph id form (`kgmid=/g/11zfb1ywrf`), not a Maps place URL,
-    which would have embedded `@lat,lng` coordinates. See the comment above the
-    schema block.
-  - Confirm the phone on the profile matches the site exactly. The site uses
-    `(574) 253-2807` in all 19 places it appears, which is a northern Indiana
-    area code for an Ohio business. If that is correct, fine, but the two must
-    match character for character or the local pack suffers.
-- **`about.html` is the thinnest page at 325 words** and was deliberately left
-  alone. Its copy is generic because the specifics were never supplied, and
-  inventing a founding year, a birth order or a "baking since" date is exactly
-  the failure mode to avoid. It needs a few real sentences from Faith before it
-  can grow.
+Open items live in [`_claude-state.md`](_claude-state.md), which holds the stage gate,
+every open item with who it is blocked on, and what closed each finished one. The list
+that used to sit here moved there on 2026-09-24, with each item either closed with
+evidence or carried across. The SEO reasoning and competitor data are in the gitignored
+`source-files/seo-strategy.md`.
 
 Deliberate, do not "fix":
 

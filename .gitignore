@@ -1,3 +1,7 @@
 # Camera originals stay local. Only the web-sized derivatives in img/ are
 # committed. See the "Photos" section of README.md.
 source-photos/
+
+# Keyword research, competitor figures and the working SEO plan. Business context,
+# so it stays local while the repo is public. See _claude-state.md for the open items.
+source-files/
